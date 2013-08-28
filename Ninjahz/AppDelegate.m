@@ -20,6 +20,8 @@
     // hide status bar
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
+    
+    
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
@@ -32,6 +34,9 @@
 									sharegroup:nil
 								 multiSampling:NO
 							   numberOfSamples:0];
+    
+    // multi-touch enable
+    [glView setMultipleTouchEnabled:YES];
 
 	director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
 

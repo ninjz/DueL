@@ -20,6 +20,9 @@
 @property (nonatomic,assign) int speed;
 @property (nonatomic,assign) CGPoint *vector;
 
+// animations
+@property(nonatomic, strong)id firing;
+
 
 -(void) target:(CGPoint*)coord;
 

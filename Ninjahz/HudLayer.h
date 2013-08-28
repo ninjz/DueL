@@ -1,18 +1,18 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "CharacterClass.h"
+#import "Player.h"
 #import "GameLayer.h"
 
 
 @class GameLayer;
 @interface HudLayer : CCLayer {
     CCLabelTTF *_label;
-    CharacterClass *controllingPlayer;
+    Player *controllingPlayer;
     
 }
 
 @property(nonatomic)GameLayer *gameLayer;
 
--(id)initWithPlayer:(CharacterClass*)player;
+-(id)initWithPlayer:(Player*)player;
 
 @end

@@ -4,7 +4,7 @@
 
 @implementation HudLayer
 
--(id)initWithPlayer:(CharacterClass*)player
+-(id)initWithPlayer:(Player*)player
 {
     if(self = [super init])
     {
@@ -71,6 +71,7 @@
 }
 
 
+// Send message back to controllingPlayer to use that skill
 - (void)skill1Pressed:(id)sender {
     [_label setString:@"Skill 1 Activated"];
 //    [controllingPlayer useSkill1];

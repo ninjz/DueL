@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "ProjectileSkill.h"
+#import "CCAnimation+Helper.h"
 
 @interface Fireball : ProjectileSkill {
     

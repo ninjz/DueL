@@ -8,6 +8,7 @@
 
 #import "Nazi.h"
 #import "CCAnimation+Helper.h"
+#import "NormalNazi.h"
 #import "Fireball.h"
 #import "Iceblast.h"
 #import "Pyroblast.h"
@@ -17,7 +18,7 @@
 @implementation Nazi
 
 -(id) init{
-    if (self = [super initWithSpriteFrameName:@"nazi_back1.png"]){
+    if (self = [super init]){
         self.startingHp = 100;
         self.maxHp = 100;
         self.maxLevel = 30;
@@ -31,15 +32,13 @@
         TsunamiBlast *tsunamiblast = [TsunamiBlast node];
         
         // Skins go here!
-        CCAnimation *nazi = [CCAnimation animationWithFrame:@"nazi_back"
-                                                 frameCount:6
-                                                      delay:0.2f];
+        NormalNazi *normalNazi = [NormalNazi node];
 
         
         // initializing all containers
         
         // All existing skins for this class
-        NSMutableArray *skins = [[NSMutableArray alloc] initWithArray:@[nazi]];
+        NSMutableArray *skins = [[NSMutableArray alloc] initWithArray:@[normalNazi]];
         self.allSkins = skins;
         
         // All existing skills for this class
@@ -58,10 +57,10 @@
             self.skillsKnown = skillsKnown;
         
             // --default skin for class--
-            self.equippedSkin = nazi;
+            self.equippedSkin = normalNazi;
             
             // --default skin for class has to be in this array--
-            NSMutableArray *skinsOwned = [[NSMutableArray alloc] initWithArray:@[nazi]];
+            NSMutableArray *skinsOwned = [[NSMutableArray alloc] initWithArray:@[normalNazi]];
             self.ownedSkins = skinsOwned;
 
     }

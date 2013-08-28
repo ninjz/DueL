@@ -79,5 +79,10 @@
 
 //-(void) unequipSkin
 
+-(void) useSkill:(int)skillNum
+{
+    
+}
+
 
 @end

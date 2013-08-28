@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Skill.h"
+#import "Skin.h"
 
-@interface CharacterClass : CCSprite {
+@interface CharacterClass : CCNode {
 
 }
 
@@ -31,12 +32,13 @@
 @property(nonatomic,assign) NSMutableArray *ownedSkins;
 @property(nonatomic,assign) NSMutableArray *skillsKnown;
 @property(strong) NSMutableArray *equippedSkills;
-@property(nonatomic,assign) CCAnimation *equippedSkin;
+@property(nonatomic,assign) Skin *equippedSkin;
 
 
 -(void) addSkill:(Skill*)skill;
 -(void) equipSkill:(Skill*)skill;
 -(void) unequipSkill:(Skill*)skill;
+-(void) useSkill:(int)skillNum;
 
 
 @end

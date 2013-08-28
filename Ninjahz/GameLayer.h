@@ -2,6 +2,7 @@
 #import "cocos2d.h"
 #import "Nazi.h"
 #import "CharacterClass.h"
+#import "Player.h"
 #import "HudLayer.h"
 
 
@@ -18,8 +19,8 @@
     
 }
 
-@property (strong) CharacterClass *playerOne;
-@property (strong) CharacterClass *playerTwo;
+@property (strong) Player *playerOne;
+@property (strong) Player *playerTwo;
 @property (nonatomic) HudLayer *hud;
 
 //+(id) scene;

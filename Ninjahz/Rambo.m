@@ -13,12 +13,13 @@
 #import "Pyroblast.h"
 #import "FrostStorm.h"
 #import "TsunamiBlast.h"
+#import "NormalRambo.h"
 
 
 @implementation Rambo
 
 -(id) init{
-    if (self = [super initWithSpriteFrameName:@"guy_front_walk3.png"]){
+    if (self = [super init]){
         self.startingHp = 100;
         self.maxHp = 100;
         self.maxLevel = 30;
@@ -32,15 +33,13 @@
         TsunamiBlast *tsunamiblast = [TsunamiBlast node];
         
         // Skins go here!
-        CCAnimation *nazi = [CCAnimation animationWithFrame:@"nazi_back"
-                                                 frameCount:6
-                                                      delay:0.2f];
+        NormalRambo *normalRambo = [NormalRambo node];
         
         
         // initializing all containers
         
         // All existing skins for this class
-        NSMutableArray *skins = [[NSMutableArray alloc] initWithArray:@[nazi]];
+        NSMutableArray *skins = [[NSMutableArray alloc] initWithArray:@[normalRambo]];
         self.allSkins = skins;
         
         // All existing skills for this class
@@ -59,10 +58,10 @@
         self.skillsKnown = skillsKnown;
         
         // --default skin for class--
-        self.equippedSkin = nazi;
+        self.equippedSkin = normalRambo;
         
         // --default skin for class has to be in this array--
-        NSMutableArray *skinsOwned = [[NSMutableArray alloc] initWithArray:@[nazi]];
+        NSMutableArray *skinsOwned = [[NSMutableArray alloc] initWithArray:@[normalRambo]];
         self.ownedSkins = skinsOwned;
         
     }

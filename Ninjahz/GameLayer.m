@@ -1,7 +1,7 @@
 #import "GameLayer.h"
 #import "Nazi.h"
 #import "Rambo.h"
-//#import "InputLayer.h"
+#import "Player.h"
 
 
 
@@ -47,8 +47,10 @@ static GameLayer *sharedGameLayer;
 /** Initializing all the actors in the scene
  */
 -(void)initPlayerOne {
-    _playerOne = [Nazi node];
+    Nazi *nazi = [Nazi node];
+    _playerOne = [[Player alloc] initWithCharacter:nazi];
     [self addChild:_playerOne];
+    
     [_playerOne setMainPlayer:TRUE];
     _playerOne.position = ccp(SCREEN.width/2,200);
     _playerOne.scale = 1.5;
@@ -58,8 +60,10 @@ static GameLayer *sharedGameLayer;
 }
 
 -(void)initPlayerTwo {
-    _playerTwo = [Rambo node];
+    Rambo *rambo = [Rambo node];
+    _playerTwo = [[Player alloc] initWithCharacter:rambo];
     [self addChild:_playerTwo];
+    
     _playerTwo.position = ccp(SCREEN.width/2, SCREEN.height - 200);
 //    _playerTwo.rotation = 180;   
     _playerTwo.scale = 1.5;
