@@ -8,6 +8,7 @@
 
 #import "Rambo.h"
 #import "CCAnimation+Helper.h"
+#import "ProjectileCache.h"
 #import "Fireball.h"
 #import "Iceblast.h"
 #import "Pyroblast.h"
@@ -26,11 +27,17 @@
         self.speed = 100;
         
         // Skills go here!
-        Fireball *fireball = [Fireball node];
-        Iceblast *iceblast = [Iceblast node];
-        Pyroblast *pyroblast = [Pyroblast node];
-        FrostStorm *froststorm = [FrostStorm node];
-        TsunamiBlast *tsunamiblast = [TsunamiBlast node];
+//        Fireball *fireball = [Fireball node];
+//        Iceblast *iceblast = [Iceblast node];
+//        Pyroblast *pyroblast = [Pyroblast node];
+//        FrostStorm *froststorm = [FrostStorm node];
+//        TsunamiBlast *tsunamiblast = [TsunamiBlast node];
+        
+        ProjectileCache *fireball = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+        ProjectileCache *iceblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+        ProjectileCache *pyroblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+        ProjectileCache *froststorm = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+        ProjectileCache *tsunamiblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
         
         // Skins go here!
         NormalRambo *normalRambo = [NormalRambo node];

@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Player.h"
 
 @class HudLayer;
 @class GameLayer;
@@ -14,6 +15,8 @@
     int player1Speed;
     int player2Speed;
     
+    
+    
     // Player Boundaries
     int maxHeight;
     int minHeight;
@@ -21,7 +24,14 @@
     int minWidth;
 }
 
-@property (nonatomic) HudLayer *hud;
+// player 1 hud
+@property (nonatomic) HudLayer *hud_1;
+// player 2 hud
+@property (nonatomic) HudLayer *hud_2;
+
+
+
 @property (nonatomic) GameLayer *gameLayer;
+@property (nonatomic) int selectedSkill;
 
 @end

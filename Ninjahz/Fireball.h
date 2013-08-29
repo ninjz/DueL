@@ -7,15 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "cocos2d.h"
 #import "ProjectileSkill.h"
-#import "CCAnimation+Helper.h"
+#import "cocos2d.h"
+
+
 
 @interface Fireball : ProjectileSkill {
     
 }
-
--(void) hit;
-
 
 @end

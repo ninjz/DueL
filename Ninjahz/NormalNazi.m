@@ -21,8 +21,15 @@
         // Back Animations
         CCAnimation *nazi_back_walk = [CCAnimation animationWithFrame:@"nazi_back"
                                                  frameCount:6
-                                                      delay:0.2f];
+                                                      delay:0.15f];
         
+        self.backWalking = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:nazi_back_walk]];
+        
+        CCAnimation *nazi_idle = [CCAnimation animationWithFrame:@"nazi_back"
+                                                           frameCount:1
+                                                                delay:0.1f];
+        
+        self.backIdle = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:nazi_idle]];
         
         // Front Animations
         
@@ -30,6 +37,8 @@
     
     return self;
 }
+
+
 
 
 @end

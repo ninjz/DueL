@@ -7,15 +7,16 @@
 //
 
 #import "Fireball.h"
-#import "CCAnimation+Helper.h"
+
 
 @implementation Fireball
 
 -(id)init {
     if (self = [super initWithSpriteFrameName:@"fireball_up1.png"]){
         
+        
         self.dmg = 25;
-        self.speed = 30;
+        self.speed = 200;
         self.currentCooldown = 0;
         self.cooldownTimeMax = 2;
         self.isReady = YES;
@@ -23,19 +24,20 @@
         self.hasSecondary = NO;
         self.skillIcon = @"Spell_fire_fireball02.png";
         
+        self.scale = 2;
+        
         CCAnimation *moving = [CCAnimation animationWithFrame:@"fireball_up"
                                                    frameCount:8
-                                                        delay:0.2];
+                                                        delay:0.1];
         self.firing = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:moving]];
+        
         
         
     }
     return self;
 }
 
--(void) hit
-{
-    
-}
+
+
 
 @end

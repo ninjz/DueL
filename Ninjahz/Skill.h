@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "CCAnimation+Helper.h"
 
+@class Player;
 @interface Skill : CCSprite {
     
 }
@@ -21,9 +23,10 @@
 @property(nonatomic, assign) CCAnimation *animation;
 @property(nonatomic, assign) int currentCooldown;
 @property(nonatomic, assign) int cooldownTimeMax;
+@property (nonatomic,assign) Player *owner;
 
-
-
--(void)updateState:(ccTime)dt;
+//
+//-(void) shootFrom:(CGPoint)startPosition
+//         atTarget:(CGPoint)target;
 
 @end

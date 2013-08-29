@@ -15,12 +15,20 @@ static GameLayer *sharedGameLayer;
     return sharedGameLayer;
 }
 
+static NSMutableArray *players;
+
++(NSMutableArray *) sharedPlayers;
+{
+//    NSAssert(players != nil, @" instance not yet initialized");
+    return players;
+}
 
 
 -(id) init
 {
     if ((self = [super init])){
         sharedGameLayer = self;
+        
         
         // Loading Texture Atlas
         CCSpriteFrameCache *frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
@@ -31,6 +39,8 @@ static GameLayer *sharedGameLayer;
         [self addChild:test z:0];
         test.anchorPoint = ccp(0, 0);
         test.position = ccp(0,0);
+        
+        players = [NSMutableArray arrayWithCapacity:2];
     
         [self initPlayerOne];
         [self initPlayerTwo];
@@ -49,20 +59,23 @@ static GameLayer *sharedGameLayer;
 -(void)initPlayerOne {
     Nazi *nazi = [Nazi node];
     _playerOne = [[Player alloc] initWithCharacter:nazi];
-    [self addChild:_playerOne];
+    [self addChild:_playerOne z:10];
     
     [_playerOne setMainPlayer:TRUE];
     _playerOne.position = ccp(SCREEN.width/2,200);
     _playerOne.scale = 1.5;
     [_playerOne setName:@"40CaL"];
     
+    // z:20 which is infront of player 2 so that sprite looks like it is hitting the top guy
+    [self addChild:[_playerOne.equippedSkills objectAtIndex:0] z:9];
+    [players addObject:_playerOne];
     
 }
 
 -(void)initPlayerTwo {
     Rambo *rambo = [Rambo node];
     _playerTwo = [[Player alloc] initWithCharacter:rambo];
-    [self addChild:_playerTwo];
+    [self addChild:_playerTwo z:5];
     
     _playerTwo.position = ccp(SCREEN.width/2, SCREEN.height - 200);
 //    _playerTwo.rotation = 180;   
@@ -70,6 +83,11 @@ static GameLayer *sharedGameLayer;
     [_playerTwo setName:@"GodZilla"];
     [_playerTwo setMainPlayer:FALSE];
     
+    // z:5 so on collision goes under player 1
+    [self addChild:[_playerTwo.equippedSkills objectAtIndex:0] z:3];
+//    [[_playerTwo.equippedSkills objectAtIndex:0] setRotation:180];
+    
+    [players addObject:_playerTwo];
 }
 
 

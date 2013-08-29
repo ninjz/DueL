@@ -20,12 +20,32 @@
         self.image = @"guy_front_walk5.png";
         
         // Back Animations
-        CCAnimation *nazi_back_walk = [CCAnimation animationWithFrame:@"nazi_back"
-                                                           frameCount:6
-                                                                delay:0.2f];
+        CCAnimation *back_walk = [CCAnimation animationWithFrame:@"nazi_back"
+                                                           frameCount:7
+                                                                delay:0.15f];
         
+        self.backWalking = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:back_walk]];
+        
+        CCAnimation *back_idle = [CCAnimation animationWithFrame:@"nazi_back"
+                                                      frameCount:1
+                                                           delay:0.1f];
+        
+        self.backIdle = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:back_idle]];
         
         // Front Animations
+        
+        CCAnimation *front_walk = [CCAnimation animationWithFrame:@"guy_front_walk"
+                                                      frameCount:7
+                                                           delay:0.15f];
+        
+        self.frontWalking = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:front_walk]];
+        
+        CCAnimation *front_idle = [CCAnimation animationWithFrame:@"guy_front_walk"
+                                                      frameCount:1
+                                                           delay:0.1f];
+        
+        self.frontIdle = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:front_idle]];
+        
         
     }
     

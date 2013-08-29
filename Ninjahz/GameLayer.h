@@ -25,7 +25,7 @@
 
 //+(id) scene;
 +(GameLayer *) sharedGameLayer;
-+(NSMutableArray *) sharedEnemies;
++(NSMutableArray *) sharedPlayers;
 
 
 @end

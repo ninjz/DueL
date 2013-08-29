@@ -9,11 +9,8 @@
 #import "Nazi.h"
 #import "CCAnimation+Helper.h"
 #import "NormalNazi.h"
-#import "Fireball.h"
-#import "Iceblast.h"
-#import "Pyroblast.h"
-#import "FrostStorm.h"
-#import "TsunamiBlast.h"
+#import "ProjectileCache.h"
+
 
 @implementation Nazi
 
@@ -25,11 +22,16 @@
         self.speed = 100;
         
         // Skills go here!
-        Fireball *fireball = [Fireball node];
-        Iceblast *iceblast = [Iceblast node];
-        Pyroblast *pyroblast = [Pyroblast node];
-        FrostStorm *froststorm = [FrostStorm node];
-        TsunamiBlast *tsunamiblast = [TsunamiBlast node];
+        ProjectileCache *fireball = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+        ProjectileCache *iceblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+        ProjectileCache *pyroblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+        ProjectileCache *froststorm = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+        ProjectileCache *tsunamiblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+//        Iceblast *iceblast = [Iceblast node];
+//        Pyroblast *pyroblast = [Pyroblast node];
+//        FrostStorm *froststorm = [FrostStorm node];
+//        TsunamiBlast *tsunamiblast = [TsunamiBlast node];
+        
         
         // Skins go here!
         NormalNazi *normalNazi = [NormalNazi node];

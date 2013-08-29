@@ -8,22 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "SimpleAudioEngine.h"
 #import "Skill.h"
+#import "GameLayer.h"
+#import "Player.h"
 
 @interface ProjectileSkill : Skill {
     int dmg;
     int speed;
     CGPoint *vector;
+    ALuint effect;
 }
 
 @property (nonatomic,assign) int dmg;
 @property (nonatomic,assign) int speed;
-@property (nonatomic,assign) CGPoint *vector;
+@property (nonatomic,assign) CGPoint vector;
+
 
 // animations
 @property(nonatomic, strong)id firing;
 
-
--(void) target:(CGPoint*)coord;
+-(void) shootFrom:(CGPoint)startPosition
+         atTarget:(CGPoint)target;
 
 @end

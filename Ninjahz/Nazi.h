@@ -10,6 +10,12 @@
 #import "cocos2d.h"
 #import "CharacterClass.h"
 
+#import "Fireball.h"
+#import "Iceblast.h"
+#import "Pyroblast.h"
+#import "FrostStorm.h"
+#import "TsunamiBlast.h"
+
 @interface Nazi : CharacterClass {
     
 }

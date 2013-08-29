@@ -8,7 +8,6 @@
 
 #import "Skill.h"
 
-
 @implementation Skill
 
 
