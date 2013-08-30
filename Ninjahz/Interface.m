@@ -37,12 +37,17 @@
     CGPoint location = [myTouch locationInView:[myTouch view]];
     CGPoint pos;
     pos = [[CCDirector sharedDirector] convertToGL:location];
+    
+    // player 2 side
     if (pos.y > SCREEN.height/2){
         if (_gameLayer.playerTwo.attacking){
-            [_gameLayer.playerTwo useSkill:_selectedSkill atTarget:pos];
+            if (pos.y < _gameLayer.playerTwo.position.y){
+                [_gameLayer.playerTwo useSkill:_selectedSkill atTarget:pos];
+                
+                // tell that player's hude that it has been shot, start cooldown
+                [_hud_2 setSelected:FALSE];
+            }
             
-            // tell that player's hude that it has been shot, start cooldown
-            [_hud_2 setSelected:FALSE];
         
             
         } else {
@@ -55,13 +60,13 @@
         }
         
         
-    } else{
+    } else{  // player 1 side
         if (_gameLayer.playerOne.attacking){
-            NSLog(@"used skill");
-            [_gameLayer.playerOne useSkill:_selectedSkill atTarget:pos];
-            [_hud_1 setSelected:FALSE];
-            
-            
+            if (pos.y > _gameLayer.playerOne.position.y){
+                [_gameLayer.playerOne useSkill:_selectedSkill atTarget:pos];
+                [_hud_1 setSelected:FALSE];
+                
+            }
         } else {
             
             // move player 2

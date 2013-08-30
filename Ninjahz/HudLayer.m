@@ -1,5 +1,6 @@
 #import "HudLayer.h"
 #import "Skill.h"
+#import "Cache.h"
 
 
 @implementation HudLayer
@@ -30,9 +31,12 @@
         
         // skill icon bar
         Skill *skill;
-        skill = [player.equippedSkills objectAtIndex:0];
+        Cache *cache;
+        cache = (Cache *)[player.equippedSkills objectAtIndex:0];
+        skill = (Skill *)[cache.bullets objectAtIndex:0];
+//        skill = [Fireball node];
         
-        NSLog(@"Player 1 : %@", [player name]);
+        NSLog(@"Player 1 : %@", skill.skillIcon);
         
         
         
@@ -41,25 +45,29 @@
                                                             target:self
                                                            selector:@selector(skill1Pressed:)];
         
-        skill = [player.equippedSkills objectAtIndex:1];
+        cache = (Cache *)[player.equippedSkills objectAtIndex:1];
+        skill = [cache.bullets objectAtIndex:1];
         CCMenuItem *skill2 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
                                                      selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
                                                              target:self
                                                            selector:@selector(skill2Pressed:)];
         
-        skill = [player.equippedSkills objectAtIndex:2];
+        cache = (Cache *)[player.equippedSkills objectAtIndex:2];
+        skill = [cache.bullets objectAtIndex:2];
         CCMenuItem *skill3 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
                                                      selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
                                                              target:self
                                                            selector:@selector(skill3Pressed:)];
         
-        skill = [player.equippedSkills objectAtIndex:3];
+        cache = (Cache *)[player.equippedSkills objectAtIndex:3];
+        skill = [cache.bullets objectAtIndex:3];
         CCMenuItem *skill4 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
                                                      selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
                                                              target:self
                                                            selector:@selector(skill4Pressed:)];
         
-        skill = [player.equippedSkills objectAtIndex:4];
+        cache = (Cache *)[player.equippedSkills objectAtIndex:4];
+        skill = [cache.bullets objectAtIndex:4];
         CCMenuItem *skill5 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
                                                      selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
                                                              target:self

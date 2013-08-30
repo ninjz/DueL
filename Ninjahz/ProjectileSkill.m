@@ -7,13 +7,14 @@
 //
 
 #import "ProjectileSkill.h"
-
+#import "GameLayer.h"
+#import "Player.h"
 
 @implementation ProjectileSkill
 
 
 
--(void) shootFrom:(CGPoint)startPosition
+-(void) shootAtFrom:(CGPoint)startPosition
          atTarget:(CGPoint)target
 {
     self.position = startPosition;

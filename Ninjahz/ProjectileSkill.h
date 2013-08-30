@@ -10,8 +10,7 @@
 #import "cocos2d.h"
 #import "SimpleAudioEngine.h"
 #import "Skill.h"
-#import "GameLayer.h"
-#import "Player.h"
+
 
 @interface ProjectileSkill : Skill {
     int dmg;
@@ -28,7 +27,7 @@
 // animations
 @property(nonatomic, strong)id firing;
 
--(void) shootFrom:(CGPoint)startPosition
+-(void) shootAtFrom:(CGPoint)startPosition
          atTarget:(CGPoint)target;
 
 @end

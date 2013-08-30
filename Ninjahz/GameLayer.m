@@ -2,6 +2,7 @@
 #import "Nazi.h"
 #import "Rambo.h"
 #import "Player.h"
+#import "ProjectileCache.h"
 
 
 
@@ -41,10 +42,13 @@ static NSMutableArray *players;
         test.position = ccp(0,0);
         
         players = [NSMutableArray arrayWithCapacity:2];
-    
+        
         [self initPlayerOne];
+        NSLog(@"player one initialized");
         [self initPlayerTwo];
-
+        NSLog(@"player two initialized");
+        
+        
         [self scheduleUpdate];
         
     }
@@ -67,7 +71,17 @@ static NSMutableArray *players;
     [_playerOne setName:@"40CaL"];
     
     // z:20 which is infront of player 2 so that sprite looks like it is hitting the top guy
-    [self addChild:[_playerOne.equippedSkills objectAtIndex:0] z:9];
+    for (int i = 0 ; i < 5; i ++ ){
+        [self addChild:[_playerOne.equippedSkills objectAtIndex:i] z:9];
+        
+    }
+    
+    // set the owner of each skill cache
+    for (ProjectileCache *cache in _playerOne.equippedSkills){
+        [cache setOwner:_playerOne];
+    }
+    
+    
     [players addObject:_playerOne];
     
 }
@@ -84,7 +98,16 @@ static NSMutableArray *players;
     [_playerTwo setMainPlayer:FALSE];
     
     // z:5 so on collision goes under player 1
-    [self addChild:[_playerTwo.equippedSkills objectAtIndex:0] z:3];
+    for (int i = 0; i < 5; i++){
+        [self addChild:[_playerTwo.equippedSkills objectAtIndex:i] z:3];
+    }
+    
+    
+    // set the owner of each skill cache
+    for (ProjectileCache *cache in _playerOne.equippedSkills){
+        [cache setOwner:_playerOne];
+    }
+    
 //    [[_playerTwo.equippedSkills objectAtIndex:0] setRotation:180];
     
     [players addObject:_playerTwo];

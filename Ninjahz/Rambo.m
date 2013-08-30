@@ -27,17 +27,11 @@
         self.speed = 100;
         
         // Skills go here!
-//        Fireball *fireball = [Fireball node];
-//        Iceblast *iceblast = [Iceblast node];
-//        Pyroblast *pyroblast = [Pyroblast node];
-//        FrostStorm *froststorm = [FrostStorm node];
-//        TsunamiBlast *tsunamiblast = [TsunamiBlast node];
-        
         ProjectileCache *fireball = [[ProjectileCache alloc] initWithProjectile:kFireBall];
-        ProjectileCache *iceblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
-        ProjectileCache *pyroblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
-        ProjectileCache *froststorm = [[ProjectileCache alloc] initWithProjectile:kFireBall];
-        ProjectileCache *tsunamiblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+        ProjectileCache *iceblast = [[ProjectileCache alloc] initWithProjectile:kIceBlast];
+        ProjectileCache *pyroblast = [[ProjectileCache alloc] initWithProjectile:kPyroBlast];
+        ProjectileCache *froststorm = [[ProjectileCache alloc] initWithProjectile:kFrostStorm];
+        ProjectileCache *tsunamiblast = [[ProjectileCache alloc] initWithProjectile:kTsunamiBlast];
         
         // Skins go here!
         NormalRambo *normalRambo = [NormalRambo node];

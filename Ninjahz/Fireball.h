@@ -16,4 +16,6 @@
     
 }
 
++(id) fireball;
+
 @end

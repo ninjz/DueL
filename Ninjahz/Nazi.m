@@ -23,14 +23,10 @@
         
         // Skills go here!
         ProjectileCache *fireball = [[ProjectileCache alloc] initWithProjectile:kFireBall];
-        ProjectileCache *iceblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
-        ProjectileCache *pyroblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
-        ProjectileCache *froststorm = [[ProjectileCache alloc] initWithProjectile:kFireBall];
-        ProjectileCache *tsunamiblast = [[ProjectileCache alloc] initWithProjectile:kFireBall];
-//        Iceblast *iceblast = [Iceblast node];
-//        Pyroblast *pyroblast = [Pyroblast node];
-//        FrostStorm *froststorm = [FrostStorm node];
-//        TsunamiBlast *tsunamiblast = [TsunamiBlast node];
+        ProjectileCache *iceblast = [[ProjectileCache alloc] initWithProjectile:kIceBlast];
+        ProjectileCache *pyroblast = [[ProjectileCache alloc] initWithProjectile:kPyroBlast];
+        ProjectileCache *froststorm = [[ProjectileCache alloc] initWithProjectile:kFrostStorm];
+        ProjectileCache *tsunamiblast = [[ProjectileCache alloc] initWithProjectile:kTsunamiBlast];
         
         
         // Skins go here!
@@ -53,6 +49,8 @@
             // --default skills for class-- skills currently equipped (5 max currently.)
             NSMutableArray *equippedSkills = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast]];
             self.equippedSkills = equippedSkills;
+        
+            
             
             // --default skills for class has to be in this array--
             NSMutableArray *skillsKnown = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast]];

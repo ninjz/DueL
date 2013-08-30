@@ -8,19 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "Fireball.h"
-#import "Iceblast.h"
-#import "Pyroblast.h"
-#import "FrostStorm.h"
-#import "TsunamiBlast.h"
-#import "ProjectileSkill.h"
 
-@interface ProjectileCache : ProjectileSkill {
-    CCArray *bullets;
-    
+#import "Cache.h"
+
+@interface ProjectileCache : Cache {
+    CCSpriteBatchNode *batch;
     NSUInteger nextInactiveBullet;
 }
 
+
+
 -(id) initWithProjectile:(Projectile) skill;
+
+-(void) shootFrom:(CGPoint)startPosition
+         atTarget:(CGPoint)target;
 
 @end

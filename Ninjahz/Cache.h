@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface Cache : NSObject {
+@class Player;
+@interface Cache : CCNode {
     
 }
+
+@property (nonatomic, strong) CCArray *bullets;
+
+-(void) setOwner:(Player *)owner;
 
 @end

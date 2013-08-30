@@ -8,6 +8,7 @@
 
 #import "Player.h"
 #import "CharacterClass.h"
+#import "ProjectileCache.h"
 
 
 @implementation Player
@@ -81,7 +82,7 @@
 -(void)useSkill:(int)skillNum
        atTarget:(CGPoint)target
 {
-    ProjectileSkill *skill = [_equippedSkills objectAtIndex:skillNum - 1];
+    ProjectileCache *skill = [_equippedSkills objectAtIndex:skillNum - 1];
     [skill setOwner: self];
     [skill shootFrom:self.position atTarget:target];
     _attacking = NO;
