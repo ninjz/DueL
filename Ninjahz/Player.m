@@ -13,15 +13,19 @@
 
 @implementation Player
 
--(id) initWithCharacter:(CharacterClass *)character{
+-(id) initWithCharacter:(CharacterClass *)character asPlayer:(int)playerNum{
     if(self = [super initWithSpriteFrameName:character.equippedSkin.image])
     {
+        _playerNumber = playerNum;
         _equippedSkills = character.equippedSkills;
         _equippedSkin = character.equippedSkin;
         _currHp = character.maxHp;
         _speed = character.speed;
         _velocity = character.velocity;
         _attacking = NO;
+        desiredTarget = self.position;
+        
+        [self scheduleUpdate];
         
     }
     return self;
@@ -87,6 +91,44 @@
     [skill shootFrom:self.position atTarget:target];
     _attacking = NO;
     
+}
+
+-(void) movePlayer:(CGPoint) target
+{
+    if([self actionState] != kActionStateStunned){
+        desiredTarget = target;
+        CGPoint vector = ccpSub(target, self.position);
+        vector = ccpNormalize(vector);
+        desiredDirection = vector;
+    }
+    
+}
+-(void) specialmovePlayer:(CGPoint) target
+{
+        desiredTarget = target;
+        CGPoint vector = ccpSub(target, self.position);
+        vector = ccpNormalize(vector);
+        desiredDirection = vector;
+}
+-(void)update:(ccTime)dt
+{
+    NSLog(@"desired pos: x:%f y:%f position: x:%f y:%f", desiredDirection.x, desiredDirection.y, self.position.x, self.position.y);
+    if (ccpDistance(desiredTarget, self.position) > 1){
+        self.position = ccpAdd(self.position, ccpMult(desiredDirection, self.speed * dt));
+        
+        if(self.playerNumber == 1){
+            [self backWalk];
+        } else{
+            [self frontWalk];
+        }
+    } else {
+        if(self.playerNumber == 1){
+            [self backIdle];
+        } else{
+            [self frontWalk];
+        }
+        
+    }
 }
 
 

@@ -12,6 +12,15 @@
 
 @implementation ProjectileSkill
 
+-(id)init
+{
+    if(self = [super init]){
+        self.skillType = kProjectile;
+        
+    }
+    
+    return self;
+}
 
 
 -(void) shootAtFrom:(CGPoint)startPosition

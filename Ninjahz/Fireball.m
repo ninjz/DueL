@@ -28,7 +28,6 @@
         self.isActive = NO;
         self.hasSecondary = NO;
         self.skillIcon = @"Spell_fire_fireball02.png";
-        
         self.scale = 2;
         
         CCAnimation *moving = [CCAnimation animationWithFrame:@"fireball_up"

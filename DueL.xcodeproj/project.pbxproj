@@ -15,6 +15,12 @@
 		A12EE24F17CC87230093C564 /* Pyroblast.m in Sources */ = {isa = PBXBuildFile; fileRef = A12EE24E17CC87230093C564 /* Pyroblast.m */; };
 		A12EE25217CC877C0093C564 /* FrostStorm.m in Sources */ = {isa = PBXBuildFile; fileRef = A12EE25117CC877C0093C564 /* FrostStorm.m */; };
 		A12EE25517CC87BA0093C564 /* TsunamiBlast.m in Sources */ = {isa = PBXBuildFile; fileRef = A12EE25417CC87BA0093C564 /* TsunamiBlast.m */; };
+		A16FFB2A17D1437500B52890 /* Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = A16FFB2917D1437500B52890 /* Skin.m */; };
+		A16FFB2D17D143A300B52890 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = A16FFB2C17D143A300B52890 /* Player.m */; };
+		A16FFB3317D144A300B52890 /* ProjectileSkill.m in Sources */ = {isa = PBXBuildFile; fileRef = A16FFB3217D144A300B52890 /* ProjectileSkill.m */; };
+		A16FFB3817D1455700B52890 /* InstantCast.m in Sources */ = {isa = PBXBuildFile; fileRef = A16FFB3517D1455700B52890 /* InstantCast.m */; };
+		A16FFB3917D1455700B52890 /* Teleport.m in Sources */ = {isa = PBXBuildFile; fileRef = A16FFB3717D1455700B52890 /* Teleport.m */; };
+		A16FFB4217D1486F00B52890 /* WallJump.m in Sources */ = {isa = PBXBuildFile; fileRef = A16FFB4117D1486F00B52890 /* WallJump.m */; };
 		A17AE43216E1C64600187139 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17AE43116E1C64600187139 /* QuartzCore.framework */; };
 		A17AE43416E1C64600187139 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17AE43316E1C64600187139 /* OpenGLES.framework */; };
 		A17AE43616E1C64600187139 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17AE43516E1C64600187139 /* OpenAL.framework */; };
@@ -142,6 +148,10 @@
 		A17AE9F316E1CB1C00187139 /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = A17AE98C16E1CB1C00187139 /* vec2.c */; };
 		A17AE9F416E1CB1C00187139 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = A17AE98D16E1CB1C00187139 /* vec3.c */; };
 		A17AE9F516E1CB1C00187139 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = A17AE98E16E1CB1C00187139 /* vec4.c */; };
+		A17B0A0617D1431700C16F05 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B09FD17D142F600C16F05 /* Cache.m */; };
+		A17B0A0717D1431700C16F05 /* NormalNazi.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B09FF17D142F800C16F05 /* NormalNazi.m */; };
+		A17B0A0817D1431700C16F05 /* NormalRambo.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B0A0117D142FD00C16F05 /* NormalRambo.m */; };
+		A17B0A0917D1431700C16F05 /* ProjectileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B0A0317D1430400C16F05 /* ProjectileCache.m */; };
 		A1D69F9617CC1151009B545A /* CharacterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69F9317CC1151009B545A /* CharacterClass.m */; };
 		A1D69F9717CC1151009B545A /* Nazi.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69F9517CC1151009B545A /* Nazi.m */; };
 		A1D69FA817CC1167009B545A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69F9917CC1167009B545A /* AppDelegate.m */; };
@@ -150,7 +160,6 @@
 		A1D69FAB17CC1167009B545A /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69F9F17CC1167009B545A /* GameLayer.m */; };
 		A1D69FAC17CC1167009B545A /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69FA117CC1167009B545A /* GameScene.m */; };
 		A1D69FAD17CC1167009B545A /* HudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69FA317CC1167009B545A /* HudLayer.m */; };
-		A1D69FAE17CC1167009B545A /* ProjectileSkill.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69FA517CC1167009B545A /* ProjectileSkill.m */; };
 		A1D69FAF17CC1167009B545A /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69FA717CC1167009B545A /* Skill.m */; };
 		A1D69FB117CC11AA009B545A /* TestStage.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D69FB017CC11AA009B545A /* TestStage.png */; };
 /* End PBXBuildFile section */
@@ -183,6 +192,18 @@
 		A12EE25117CC877C0093C564 /* FrostStorm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrostStorm.m; sourceTree = "<group>"; };
 		A12EE25317CC87BA0093C564 /* TsunamiBlast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TsunamiBlast.h; sourceTree = "<group>"; };
 		A12EE25417CC87BA0093C564 /* TsunamiBlast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TsunamiBlast.m; sourceTree = "<group>"; };
+		A16FFB2817D1437500B52890 /* Skin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skin.h; sourceTree = "<group>"; };
+		A16FFB2917D1437500B52890 /* Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skin.m; sourceTree = "<group>"; };
+		A16FFB2B17D143A300B52890 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		A16FFB2C17D143A300B52890 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		A16FFB3117D144A300B52890 /* ProjectileSkill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectileSkill.h; sourceTree = "<group>"; };
+		A16FFB3217D144A300B52890 /* ProjectileSkill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectileSkill.m; sourceTree = "<group>"; };
+		A16FFB3417D1455700B52890 /* InstantCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstantCast.h; sourceTree = "<group>"; };
+		A16FFB3517D1455700B52890 /* InstantCast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstantCast.m; sourceTree = "<group>"; };
+		A16FFB3617D1455700B52890 /* Teleport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teleport.h; sourceTree = "<group>"; };
+		A16FFB3717D1455700B52890 /* Teleport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teleport.m; sourceTree = "<group>"; };
+		A16FFB4017D1486F00B52890 /* WallJump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallJump.h; sourceTree = "<group>"; };
+		A16FFB4117D1486F00B52890 /* WallJump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallJump.m; sourceTree = "<group>"; };
 		A17AE42E16E1C64600187139 /* DueL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DueL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A17AE43116E1C64600187139 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A17AE43316E1C64600187139 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -444,6 +465,14 @@
 		A17AE98F16E1CB1C00187139 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_cocos2d.txt; sourceTree = "<group>"; };
 		A17AE99016E1CB1C00187139 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		A17AE99116E1CB1C00187139 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
+		A17B09FC17D142F500C16F05 /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		A17B09FD17D142F600C16F05 /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
+		A17B09FE17D142F600C16F05 /* NormalNazi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalNazi.h; sourceTree = "<group>"; };
+		A17B09FF17D142F800C16F05 /* NormalNazi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalNazi.m; sourceTree = "<group>"; };
+		A17B0A0017D142FA00C16F05 /* NormalRambo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalRambo.h; sourceTree = "<group>"; };
+		A17B0A0117D142FD00C16F05 /* NormalRambo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalRambo.m; sourceTree = "<group>"; };
+		A17B0A0217D1430100C16F05 /* ProjectileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectileCache.h; sourceTree = "<group>"; };
+		A17B0A0317D1430400C16F05 /* ProjectileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectileCache.m; sourceTree = "<group>"; };
 		A186F4401730BB4600906A5A /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Defines.h; path = "../cocos2d-library/Defines.h"; sourceTree = "<group>"; };
 		A1D69F9217CC1151009B545A /* CharacterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterClass.h; sourceTree = "<group>"; };
 		A1D69F9317CC1151009B545A /* CharacterClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterClass.m; sourceTree = "<group>"; };
@@ -461,8 +490,6 @@
 		A1D69FA117CC1167009B545A /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		A1D69FA217CC1167009B545A /* HudLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudLayer.h; sourceTree = "<group>"; };
 		A1D69FA317CC1167009B545A /* HudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudLayer.m; sourceTree = "<group>"; };
-		A1D69FA417CC1167009B545A /* ProjectileSkill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectileSkill.h; sourceTree = "<group>"; };
-		A1D69FA517CC1167009B545A /* ProjectileSkill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectileSkill.m; sourceTree = "<group>"; };
 		A1D69FA617CC1167009B545A /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skill.h; sourceTree = "<group>"; };
 		A1D69FA717CC1167009B545A /* Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skill.m; sourceTree = "<group>"; };
 		A1D69FB017CC11AA009B545A /* TestStage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestStage.png; sourceTree = "<group>"; };
@@ -500,6 +527,8 @@
 		A12EE24417CC12890093C564 /* GameBoard */ = {
 			isa = PBXGroup;
 			children = (
+				A16FFB2B17D143A300B52890 /* Player.h */,
+				A16FFB2C17D143A300B52890 /* Player.m */,
 				A1D69F9E17CC1167009B545A /* GameLayer.h */,
 				A1D69F9F17CC1167009B545A /* GameLayer.m */,
 				A1D69FA017CC1167009B545A /* GameScene.h */,
@@ -530,8 +559,20 @@
 			children = (
 				A1D69FA617CC1167009B545A /* Skill.h */,
 				A1D69FA717CC1167009B545A /* Skill.m */,
-				A1D69FA417CC1167009B545A /* ProjectileSkill.h */,
-				A1D69FA517CC1167009B545A /* ProjectileSkill.m */,
+				A16FFB3E17D146DC00B52890 /* Instant Cast */,
+				A16FFB3A17D1469700B52890 /* Projectile Skills */,
+				A16FFB3617D1455700B52890 /* Teleport.h */,
+				A16FFB3717D1455700B52890 /* Teleport.m */,
+			);
+			name = Skills;
+			sourceTree = "<group>";
+		};
+		A16FFB3A17D1469700B52890 /* Projectile Skills */ = {
+			isa = PBXGroup;
+			children = (
+				A17B0A0217D1430100C16F05 /* ProjectileCache.h */,
+				A17B0A0317D1430400C16F05 /* ProjectileCache.m */,
+				A16FFB3B17D146A700B52890 /* Base */,
 				A1D69F9C17CC1167009B545A /* Fireball.h */,
 				A1D69F9D17CC1167009B545A /* Fireball.m */,
 				A12EE24A17CC7F430093C564 /* Iceblast.h */,
@@ -543,7 +584,56 @@
 				A12EE25317CC87BA0093C564 /* TsunamiBlast.h */,
 				A12EE25417CC87BA0093C564 /* TsunamiBlast.m */,
 			);
-			name = Skills;
+			name = "Projectile Skills";
+			sourceTree = "<group>";
+		};
+		A16FFB3B17D146A700B52890 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A16FFB3117D144A300B52890 /* ProjectileSkill.h */,
+				A16FFB3217D144A300B52890 /* ProjectileSkill.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		A16FFB3C17D146BD00B52890 /* Skins */ = {
+			isa = PBXGroup;
+			children = (
+				A16FFB3D17D146C700B52890 /* Base */,
+				A17B09FE17D142F600C16F05 /* NormalNazi.h */,
+				A17B09FF17D142F800C16F05 /* NormalNazi.m */,
+				A17B0A0017D142FA00C16F05 /* NormalRambo.h */,
+				A17B0A0117D142FD00C16F05 /* NormalRambo.m */,
+			);
+			name = Skins;
+			sourceTree = "<group>";
+		};
+		A16FFB3D17D146C700B52890 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A16FFB2817D1437500B52890 /* Skin.h */,
+				A16FFB2917D1437500B52890 /* Skin.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		A16FFB3E17D146DC00B52890 /* Instant Cast */ = {
+			isa = PBXGroup;
+			children = (
+				A16FFB3F17D146FC00B52890 /* Base */,
+				A16FFB4017D1486F00B52890 /* WallJump.h */,
+				A16FFB4117D1486F00B52890 /* WallJump.m */,
+			);
+			name = "Instant Cast";
+			sourceTree = "<group>";
+		};
+		A16FFB3F17D146FC00B52890 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A16FFB3417D1455700B52890 /* InstantCast.h */,
+				A16FFB3517D1455700B52890 /* InstantCast.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		A17AE42516E1C64600187139 = {
@@ -586,8 +676,11 @@
 		A17AE44316E1C64600187139 /* Ninjahz */ = {
 			isa = PBXGroup;
 			children = (
+				A16FFB3C17D146BD00B52890 /* Skins */,
 				A1D69F9817CC1167009B545A /* AppDelegate.h */,
 				A1D69F9917CC1167009B545A /* AppDelegate.m */,
+				A17B09FC17D142F500C16F05 /* Cache.h */,
+				A17B09FD17D142F600C16F05 /* Cache.m */,
 				A12EE24617CC12A70093C564 /* Skills */,
 				A12EE24517CC12970093C564 /* Character */,
 				A12EE24417CC12890093C564 /* GameBoard */,
@@ -1082,20 +1175,29 @@
 				A12EE25517CC87BA0093C564 /* TsunamiBlast.m in Sources */,
 				A1D69FA917CC1167009B545A /* CCAnimation+Helper.m in Sources */,
 				A1D69FAD17CC1167009B545A /* HudLayer.m in Sources */,
-				A1D69FAE17CC1167009B545A /* ProjectileSkill.m in Sources */,
 				A12EE24917CC133A0093C564 /* Interface.m in Sources */,
+				A16FFB3817D1455700B52890 /* InstantCast.m in Sources */,
 				A1D69FAF17CC1167009B545A /* Skill.m in Sources */,
 				A1D69FA817CC1167009B545A /* AppDelegate.m in Sources */,
 				A1D69FAB17CC1167009B545A /* GameLayer.m in Sources */,
 				A1D69FAA17CC1167009B545A /* Fireball.m in Sources */,
 				A10E1F2017CD303B0047A3F7 /* Rambo.m in Sources */,
 				A17AE5BA16E1C64800187139 /* main.m in Sources */,
+				A16FFB2A17D1437500B52890 /* Skin.m in Sources */,
 				A1D69F9617CC1151009B545A /* CharacterClass.m in Sources */,
+				A16FFB3317D144A300B52890 /* ProjectileSkill.m in Sources */,
 				A12EE25217CC877C0093C564 /* FrostStorm.m in Sources */,
+				A16FFB4217D1486F00B52890 /* WallJump.m in Sources */,
 				A12EE24C17CC7F430093C564 /* Iceblast.m in Sources */,
 				A1D69FAC17CC1167009B545A /* GameScene.m in Sources */,
+				A16FFB2D17D143A300B52890 /* Player.m in Sources */,
 				A12EE24F17CC87230093C564 /* Pyroblast.m in Sources */,
 				A1D69F9717CC1151009B545A /* Nazi.m in Sources */,
+				A17B0A0617D1431700C16F05 /* Cache.m in Sources */,
+				A17B0A0717D1431700C16F05 /* NormalNazi.m in Sources */,
+				A16FFB3917D1455700B52890 /* Teleport.m in Sources */,
+				A17B0A0817D1431700C16F05 /* NormalRambo.m in Sources */,
+				A17B0A0917D1431700C16F05 /* ProjectileCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

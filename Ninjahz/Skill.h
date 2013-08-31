@@ -22,7 +22,8 @@
 @property(nonatomic, assign) CCAnimation *animation;
 @property(nonatomic, assign) int currentCooldown;
 @property(nonatomic, assign) int cooldownTimeMax;
-@property (nonatomic,assign) Player *owner;
+@property(nonatomic,assign) Player *owner;
+@property(nonatomic, assign) SkillType skillType;
 
 
 

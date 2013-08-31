@@ -11,4 +11,14 @@
 
 @implementation InstantCast
 
+-(id)init
+{
+    if(self = [super init]){
+        self.skillType = kInstant;
+        
+    }
+    
+    return self;
+}
+
 @end

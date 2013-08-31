@@ -13,7 +13,8 @@
 #import "Skill.h"
 
 @interface Player : CCSprite {
-    
+    CGPoint desiredDirection;
+    CGPoint desiredTarget;
 }
 
 @property(nonatomic, strong) id backWalking;
@@ -27,12 +28,14 @@
 @property(nonatomic,assign) BOOL mainPlayer;
 @property(strong) NSMutableArray *equippedSkills;
 @property(nonatomic,strong) Skin *equippedSkin;
+@property(nonatomic,assign) int playerNumber;
 
 //states
 @property(nonatomic, assign)ActionState actionState;
 @property(nonatomic) BOOL attacking;
 
--(id) initWithCharacter:(CharacterClass *)character;
+-(id) initWithCharacter:(CharacterClass *)character
+                       asPlayer:(int)playerNum;
 -(void)backWalk;
 -(void)backIdle;
 -(void)frontWalk;
@@ -42,6 +45,8 @@
        atTarget:(CGPoint)target;
 
 -(void)damage:(int)dmg;
+-(void) movePlayer:(CGPoint) target;
+-(void) specialmovePlayer:(CGPoint) target;
 
 
 @end

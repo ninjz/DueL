@@ -62,7 +62,7 @@ static NSMutableArray *players;
  */
 -(void)initPlayerOne {
     Nazi *nazi = [Nazi node];
-    _playerOne = [[Player alloc] initWithCharacter:nazi];
+    _playerOne = [[Player alloc] initWithCharacter:nazi asPlayer:1];
     [self addChild:_playerOne z:10];
     
     [_playerOne setMainPlayer:TRUE];
@@ -88,7 +88,7 @@ static NSMutableArray *players;
 
 -(void)initPlayerTwo {
     Rambo *rambo = [Rambo node];
-    _playerTwo = [[Player alloc] initWithCharacter:rambo];
+    _playerTwo = [[Player alloc] initWithCharacter:rambo asPlayer:2];
     [self addChild:_playerTwo z:5];
     
     _playerTwo.position = ccp(SCREEN.width/2, SCREEN.height - 200);

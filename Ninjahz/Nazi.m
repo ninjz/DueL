@@ -10,6 +10,7 @@
 #import "CCAnimation+Helper.h"
 #import "NormalNazi.h"
 #import "ProjectileCache.h"
+#import "WallJump.h"
 
 
 @implementation Nazi
@@ -22,11 +23,17 @@
         self.speed = 100;
         
         // Skills go here!
-        ProjectileCache *fireball = [[ProjectileCache alloc] initWithProjectile:kFireBall];
-        ProjectileCache *iceblast = [[ProjectileCache alloc] initWithProjectile:kIceBlast];
-        ProjectileCache *pyroblast = [[ProjectileCache alloc] initWithProjectile:kPyroBlast];
-        ProjectileCache *froststorm = [[ProjectileCache alloc] initWithProjectile:kFrostStorm];
-        ProjectileCache *tsunamiblast = [[ProjectileCache alloc] initWithProjectile:kTsunamiBlast];
+//        ProjectileCache *fireball = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+//        ProjectileCache *iceblast = [[ProjectileCache alloc] initWithProjectile:kIceBlast];
+//        ProjectileCache *pyroblast = [[ProjectileCache alloc] initWithProjectile:kPyroBlast];
+//        ProjectileCache *froststorm = [[ProjectileCache alloc] initWithProjectile:kFrostStorm];
+//        ProjectileCache *tsunamiblast = [[ProjectileCache alloc] initWithProjectile:kTsunamiBlast];
+        Fireball *fireball = [Fireball node];
+        Iceblast *iceblast = [Iceblast node];
+        Pyroblast *pyrblast = [Pyroblast node];
+        FrostStorm *froststorm = [FrostStorm node];
+        TsunamiBlast *tsunamiblast = [TsunamiBlast node];
+        WallJump *walljump = [WallJump node];
         
         
         // Skins go here!
@@ -40,20 +47,20 @@
         self.allSkins = skins;
         
         // All existing skills for this class
-        NSMutableArray *skills = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast]];
+        NSMutableArray *skills = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast, walljump]];
         self.allSkills = skills;
         
         
         /** DEFAULT**/
 
             // --default skills for class-- skills currently equipped (5 max currently.)
-            NSMutableArray *equippedSkills = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast]];
+            NSMutableArray *equippedSkills = [[NSMutableArray alloc] initWithArray:@[fireball, walljump, pyroblast, froststorm, tsunamiblast]];
             self.equippedSkills = equippedSkills;
         
             
             
             // --default skills for class has to be in this array--
-            NSMutableArray *skillsKnown = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast]];
+            NSMutableArray *skillsKnown = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast, walljump]];
             self.skillsKnown = skillsKnown;
         
             // --default skin for class--

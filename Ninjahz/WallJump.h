@@ -1,5 +1,5 @@
 //
-//  InstantCast.h
+//  WallJump.h
 //  DueL
 //
 //  Created by Calvin Cheng on 2013-08-30.
@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "Skill.h"
+#import "InstantCast.h"
 
-@interface InstantCast : Skill {
+
+@interface WallJump : InstantCast {
     
 }
 
--(void)activate;
+@property (nonatomic, assign) BOOL nearWall;
 
 @end
