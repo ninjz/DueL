@@ -3,6 +3,7 @@
 #import "Rambo.h"
 #import "Player.h"
 #import "ProjectileCache.h"
+#import "ProjectileSkill.h"
 
 
 
@@ -62,13 +63,13 @@ static NSMutableArray *players;
  */
 -(void)initPlayerOne {
     Nazi *nazi = [Nazi node];
-    _playerOne = [[Player alloc] initWithCharacter:nazi asPlayer:1];
+    _playerOne = [[Player alloc] initWithCharacter:nazi asPlayer:1 withName:@"god" atPosition:ccp(SCREEN.width/2,200)];
+    [_playerOne initSkills];
     [self addChild:_playerOne z:10];
     
+    
     [_playerOne setMainPlayer:TRUE];
-    _playerOne.position = ccp(SCREEN.width/2,200);
     _playerOne.scale = 1.5;
-    [_playerOne setName:@"40CaL"];
     
     // z:20 which is infront of player 2 so that sprite looks like it is hitting the top guy
     for (int i = 0 ; i < 5; i ++ ){
@@ -77,9 +78,16 @@ static NSMutableArray *players;
     }
     
     // set the owner of each skill cache
-    for (ProjectileCache *cache in _playerOne.equippedSkills){
-        [cache setOwner:_playerOne];
-    }
+//    for (Skill *skill in _playerOne.equippedSkills){
+//        NSLog(@"%i", skill.skillType);
+//        if (skill.skillType != kProjectile){
+//            [skill setOwner:_playerOne];
+//        } else {
+//            ProjectileSkill * temp = (ProjectileSkill *)skill;
+//            [temp.cache setOwner:_playerOne];
+//        }
+//        
+//    }
     
     
     [players addObject:_playerOne];
@@ -88,13 +96,13 @@ static NSMutableArray *players;
 
 -(void)initPlayerTwo {
     Rambo *rambo = [Rambo node];
-    _playerTwo = [[Player alloc] initWithCharacter:rambo asPlayer:2];
+    _playerTwo = [[Player alloc] initWithCharacter:rambo asPlayer:2 withName:@"Godzilla" atPosition:ccp(SCREEN.width/2, SCREEN.height - 200)];
+    [_playerTwo initSkills];
+    
     [self addChild:_playerTwo z:5];
     
-    _playerTwo.position = ccp(SCREEN.width/2, SCREEN.height - 200);
 //    _playerTwo.rotation = 180;   
     _playerTwo.scale = 1.5;
-    [_playerTwo setName:@"GodZilla"];
     [_playerTwo setMainPlayer:FALSE];
     
     // z:5 so on collision goes under player 1
@@ -104,9 +112,16 @@ static NSMutableArray *players;
     
     
     // set the owner of each skill cache
-    for (ProjectileCache *cache in _playerOne.equippedSkills){
-        [cache setOwner:_playerOne];
-    }
+//    for (Skill *skill in _playerTwo.equippedSkills){
+//        if (skill.skillType != kProjectile){
+//            [skill setOwner:_playerTwo];
+//        } else {
+//            
+//            ProjectileSkill * temp = (ProjectileSkill *)skill;
+//            [temp.cache setOwner:_playerTwo];
+//        }
+//        
+//    }
     
 //    [[_playerTwo.equippedSkills objectAtIndex:0] setRotation:180];
     

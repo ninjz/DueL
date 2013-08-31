@@ -11,9 +11,9 @@
 
 @implementation InstantCast
 
--(id)init
+-(id)initWithSpriteFrame:(CCSpriteFrame *)spriteFrame
 {
-    if(self = [super init]){
+    if(self = [super initWithSpriteFrame:spriteFrame]){
         self.skillType = kInstant;
         
     }

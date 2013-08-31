@@ -1,4 +1,4 @@
-//
+
 //  ProjectileCache.m
 //  DueL
 //
@@ -14,6 +14,8 @@
 #import "FrostStorm.h"
 #import "TsunamiBlast.h"
 #import "GameLayer.h"
+#import "Player.h"
+
 
 @implementation ProjectileCache
 
@@ -26,7 +28,6 @@
         
         switch (skill) {
             case kFireBall:
-                NSLog(@"HERE");
                 for (int i = 0; i < 10; i++) {
                     Fireball *fireball = [Fireball node];
                     fireball.visible = NO;
@@ -106,9 +107,14 @@
 
 -(void) setOwner:(Player *)owner
 {
+    [super setOwner:owner];
     for (ProjectileSkill *skill in self.bullets){
         [skill setOwner:owner];
+//        NSLog(@"%@", skill.owner.name);
     }
+//
 }
+
+
 
 @end

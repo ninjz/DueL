@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic, strong) CCArray *bullets;
+@property (nonatomic, assign) Player *owner;
 
 -(void) setOwner:(Player *)owner;
 

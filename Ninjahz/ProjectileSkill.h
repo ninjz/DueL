@@ -12,6 +12,7 @@
 #import "Skill.h"
 
 
+@class ProjectileCache;
 @interface ProjectileSkill : Skill {
     int dmg;
     int speed;
@@ -22,11 +23,14 @@
 @property (nonatomic,assign) int dmg;
 @property (nonatomic,assign) int speed;
 @property (nonatomic,assign) CGPoint vector;
+@property (nonatomic,assign) ProjectileCache *cache;
+@property (nonatomic,assign) Projectile projectile;
 
 
 // animations
 @property(nonatomic, strong)id firing;
 
+-(void) setCacheOwner:(Player*) player;
 -(void) shootAtFrom:(CGPoint)startPosition
          atTarget:(CGPoint)target;
 

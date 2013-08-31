@@ -1,5 +1,6 @@
 #import "Interface.h"
 #import "GameLayer.h"
+#import "Player.h"
 
 /** This is the controlling interface for Local Multiplayer **/
 @implementation Interface
@@ -23,7 +24,6 @@
         
         _selectedSkill = nil;
         
-//        [self scheduleUpdate];
         
     }
     return self;
@@ -40,17 +40,13 @@
     
     // player 2 side
     if (pos.y > SCREEN.height/2){
-        if (_gameLayer.playerTwo.attacking){
+        if (_gameLayer.playerTwo.targeting){
             if (pos.y < _gameLayer.playerTwo.position.y){
-                [_gameLayer.playerTwo useSkill:_selectedSkill atTarget:pos];
+                [_gameLayer.playerTwo useSkill:_gameLayer.playerTwo.selectedSkill atTarget:pos];
                 
                 // tell that player's hude that it has been shot, start cooldown
                 [_hud_2 setSelected:FALSE];
             } else { // let player move again
-//                targetPos_2 = pos;
-//                vector_2 = ccpSub(targetPos_2, _gameLayer.playerTwo.position);
-//                vector_2 = ccpNormalize(vector_2);
-//                [_hud_2 setSelected:FALSE];
                 [_gameLayer.playerTwo movePlayer:pos];
 
             }
@@ -60,34 +56,24 @@
         } else {
             
             // move player 2
-//            targetPos_2 = pos;
-//            vector_2 = ccpSub(targetPos_2, _gameLayer.playerTwo.position);
-//            vector_2 = ccpNormalize(vector_2);
              [_gameLayer.playerTwo movePlayer:pos];
         }
         
         
     } else{  // player 1 side
-        if (_gameLayer.playerOne.attacking){
+        if (_gameLayer.playerOne.targeting){
+            NSLog(@"targeting");
             if (pos.y > _gameLayer.playerOne.position.y){
-                [_gameLayer.playerOne useSkill:_selectedSkill atTarget:pos];
+                [_gameLayer.playerOne useSkill:_gameLayer.playerOne.selectedSkill atTarget:pos];
                 [_hud_1 setSelected:FALSE];
                 
             } else{
-//                targetPos_1 = pos;
-//                vector_1 = ccpSub(targetPos_1, _gameLayer.playerOne.position);
-//                vector_1 = ccpNormalize(vector_1);
-//                 [_hud_1 setSelected:FALSE];
                  [_gameLayer.playerOne movePlayer:pos];
                 
             }
         } else {
             
             // move player 2
-//            targetPos_1 = pos;
-//            vector_1 = ccpSub(targetPos_1, _gameLayer.playerOne.position);
-//            vector_1 = ccpNormalize(vector_1);
-//            NSLog(@"WALKING");
             [_gameLayer.playerOne movePlayer:pos];
         }
         
@@ -101,32 +87,6 @@
 {
     
     
-    
-    
-    // Movement Logic
-//    if(ccpDistance(targetPos_1, _gameLayer.playerOne.position) > 1){
-//        _gameLayer.playerOne.position = ccpAdd(_gameLayer.playerOne.position, ccpMult(vector_1, player1Speed * dt));
-////        NSLog(@"moving player 1");
-//        [_gameLayer.playerOne backWalk];
-//        
-//    } else {
-//        [_gameLayer.playerOne backIdle];
-//    }
-//    
-//    if(ccpDistance(targetPos_2, _gameLayer.playerTwo.position) > 1){
-//        _gameLayer.playerTwo.position = ccpAdd(_gameLayer.playerTwo.position, ccpMult(vector_2, player2Speed * dt));
-////        NSLog(@"moving player 2 %@", _gameLayer.playerTwo.name);
-//        [_gameLayer.playerTwo frontWalk];
-//    } else {
-//        [_gameLayer.playerTwo frontIdle];
-//    }
-//    [_gameLayer.playerOne movePlayer:vector_1];
-//    [_gameLayer.playerTwo movePlayer:vector_2];
-    
-    // Targeting Logic
-//    if(kActionStateAttack){
-//        
-//    }
     
 }
 

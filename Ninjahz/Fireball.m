@@ -7,6 +7,8 @@
 //
 
 #import "Fireball.h"
+#import "ProjectileCache.h"
+#import "Player.h"
 
 
 @implementation Fireball
@@ -29,16 +31,26 @@
         self.hasSecondary = NO;
         self.skillIcon = @"Spell_fire_fireball02.png";
         self.scale = 2;
+        self.projectile = kFireBall;
         
         CCAnimation *moving = [CCAnimation animationWithFrame:@"fireball_up"
                                                    frameCount:8
                                                         delay:0.1];
         self.firing = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:moving]];
         
-        
+//          cache = [[ProjectileCache alloc] initWithProjectile:kFireBall];
         
     }
     return self;
+}
+
+-(void) cast:(id)sender
+{
+     NSLog(@"casted");
+     NSLog(@"%@", self.owner.name);
+    [self.owner setSelectedSkill:self.skillNumber];
+    [self.owner setTargeting:YES];
+    
 }
 
 

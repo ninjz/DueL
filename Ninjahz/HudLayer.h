@@ -11,6 +11,7 @@
     CCLabelTTF *_label;
     CCLabelTTF *_healthBar;
     Player *controllingPlayer;
+    NSMutableArray *skillBar;
     
 }
 

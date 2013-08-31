@@ -19,7 +19,6 @@
         self.currentCooldown = 0;
         self.cooldownTimeMax = 10;
         self.skillIcon = @"Spell_frost_windwalkon.png";
-        
     }
     return self;
 }

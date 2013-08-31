@@ -29,13 +29,16 @@
 @property(strong) NSMutableArray *equippedSkills;
 @property(nonatomic,strong) Skin *equippedSkin;
 @property(nonatomic,assign) int playerNumber;
+@property(nonatomic,assign) int selectedSkill;
 
 //states
 @property(nonatomic, assign)ActionState actionState;
-@property(nonatomic) BOOL attacking;
+@property(nonatomic) BOOL targeting;
 
 -(id) initWithCharacter:(CharacterClass *)character
-                       asPlayer:(int)playerNum;
+               asPlayer:(int)playerNum
+               withName:(NSString*)name
+             atPosition:(CGPoint)position;
 -(void)backWalk;
 -(void)backIdle;
 -(void)frontWalk;
@@ -47,6 +50,7 @@
 -(void)damage:(int)dmg;
 -(void) movePlayer:(CGPoint) target;
 -(void) specialmovePlayer:(CGPoint) target;
+-(void) initSkills;
 
 
 @end

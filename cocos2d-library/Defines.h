@@ -55,6 +55,8 @@ typedef enum _SkillType {
 
 
 
+
+
 // 4 - structures
 typedef struct _BoundingBox {
     CGRect actual;

@@ -9,6 +9,7 @@
 #import "ProjectileSkill.h"
 #import "GameLayer.h"
 #import "Player.h"
+#import "ProjectileCache.h"
 
 @implementation ProjectileSkill
 
@@ -63,7 +64,7 @@
     
     [self runAction:self.firing];
     effect = [[SimpleAudioEngine sharedEngine] playEffect: @"fireBurning.mp3"];
-    
+     NSLog(@"SHOOTING");
     [self scheduleUpdate];
     
 }
@@ -115,6 +116,17 @@
     }
     
     
+}
+
+//-(void)initCache
+//{
+//    self.cache = [[ProjectileCache alloc]]
+//}
+
+-(void) setOwner:(Player*)player
+{
+    [self.cache setOwner:player];
+    [super setOwner:player];
 }
 
 @end

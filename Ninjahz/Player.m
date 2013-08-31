@@ -9,11 +9,16 @@
 #import "Player.h"
 #import "CharacterClass.h"
 #import "ProjectileCache.h"
+#import "ProjectileSkill.h"
+#import "Skill.h"
 
 
 @implementation Player
 
--(id) initWithCharacter:(CharacterClass *)character asPlayer:(int)playerNum{
+-(id) initWithCharacter:(CharacterClass *)character
+               asPlayer:(int)playerNum
+               withName:(NSString*)name
+             atPosition:(CGPoint)position{
     if(self = [super initWithSpriteFrameName:character.equippedSkin.image])
     {
         _playerNumber = playerNum;
@@ -22,8 +27,18 @@
         _currHp = character.maxHp;
         _speed = character.speed;
         _velocity = character.velocity;
-        _attacking = NO;
-        desiredTarget = self.position;
+        _targeting = NO;
+        _selectedSkill = 0;
+        desiredTarget = position;
+        self.position = position;
+        _name = name;
+        
+        
+        // initialize skills
+        
+        
+        
+        
         
         [self scheduleUpdate];
         
@@ -86,10 +101,11 @@
 -(void)useSkill:(int)skillNum
        atTarget:(CGPoint)target
 {
-    ProjectileCache *skill = [_equippedSkills objectAtIndex:skillNum - 1];
-    [skill setOwner: self];
+    NSLog(@"use skill:%i", skillNum);
+    ProjectileCache *skill = [[_equippedSkills objectAtIndex:skillNum - 1] cache];
+    NSLog(@"owner:%@", skill.owner);
     [skill shootFrom:self.position atTarget:target];
-    _attacking = NO;
+    _targeting = NO;
     
 }
 
@@ -110,9 +126,37 @@
         vector = ccpNormalize(vector);
         desiredDirection = vector;
 }
+
+
+-(void)initSkills
+{
+    int i = 1;
+    for(Skill *skill in self.equippedSkills){
+        if([skill skillType] == kProjectile){
+            ProjectileSkill *temp = (ProjectileSkill*)skill;
+            ProjectileCache *cache = [[ProjectileCache alloc] initWithProjectile:temp.projectile];
+            
+            [temp setCache:cache];
+            [skill setOwner:self];
+//            [temp setCacheOwner:(Player*)self];
+//            NSLog(@"%@", skill.owner.name);
+            
+            NSLog(@"!!!! %@", cache.owner.name);
+            //                [cache setOwner:self];
+            
+        } else {
+            [skill setOwner:self];
+            NSLog(@"%@", skill.owner.name);
+        }
+        [skill setSkillNumber:i];
+        i++;
+    }
+}
+
+
 -(void)update:(ccTime)dt
 {
-    NSLog(@"desired pos: x:%f y:%f position: x:%f y:%f", desiredDirection.x, desiredDirection.y, self.position.x, self.position.y);
+//    NSLog(@"desired pos: x:%f y:%f position: x:%f y:%f", desiredDirection.x, desiredDirection.y, self.position.x, self.position.y);
     if (ccpDistance(desiredTarget, self.position) > 1){
         self.position = ccpAdd(self.position, ccpMult(desiredDirection, self.speed * dt));
         
@@ -125,7 +169,7 @@
         if(self.playerNumber == 1){
             [self backIdle];
         } else{
-            [self frontWalk];
+            [self frontIdle];
         }
         
     }

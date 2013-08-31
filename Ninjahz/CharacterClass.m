@@ -11,6 +11,12 @@
 
 @implementation CharacterClass
 
+
+
+
+
+
+
 -(void) setPosition:(CGPoint)position
 {
     if(_mainPlayer){
@@ -77,7 +83,6 @@
     self.equippedSkin = skin;
 }
 
-//-(void) unequipSkin
 
 -(void) useSkill:(int)skillNum
 {

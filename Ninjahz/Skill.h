@@ -24,6 +24,7 @@
 @property(nonatomic, assign) int cooldownTimeMax;
 @property(nonatomic,assign) Player *owner;
 @property(nonatomic, assign) SkillType skillType;
+@property(nonatomic, assign) int skillNumber;
 
 
 
@@ -31,5 +32,5 @@
 //
 //-(void) shootFrom:(CGPoint)startPosition
 //         atTarget:(CGPoint)target;
-
+-(void) cast:(id)sender;
 @end

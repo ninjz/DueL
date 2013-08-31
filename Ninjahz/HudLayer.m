@@ -30,50 +30,53 @@
         [self addChild:_healthBar];
         
         // skill icon bar
-        Skill *skill;
-        Cache *cache;
-        cache = (Cache *)[player.equippedSkills objectAtIndex:0];
-        skill = (Skill *)[cache.bullets objectAtIndex:0];
-//        skill = [Fireball node];
+        CCMenuItem *skillItem;
         
-        NSLog(@"Player 1 : %@", skill.skillIcon);
+        skillBar = [[NSMutableArray alloc] initWithCapacity:player.equippedSkills.count];
+
+        for (Skill *skill in player.equippedSkills){
+            skillItem = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+                                                 selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+                                                         target:skill
+                                                      selector:@selector(cast:)
+                                                     ];
+            
+//           NSLog(@"%@", [[player.equippedSkills objectAtIndex:i] skillIcon]);
+            [skillBar addObject:skillItem];
+        }
         
-        
-        
-        CCMenuItem *skill1 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-                                                    selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-                                                            target:self
-                                                           selector:@selector(skill1Pressed:)];
-        
-        cache = (Cache *)[player.equippedSkills objectAtIndex:1];
-        skill = [cache.bullets objectAtIndex:1];
-        CCMenuItem *skill2 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-                                                     selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-                                                             target:self
-                                                           selector:@selector(skill2Pressed:)];
-        
-        cache = (Cache *)[player.equippedSkills objectAtIndex:2];
-        skill = [cache.bullets objectAtIndex:2];
-        CCMenuItem *skill3 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-                                                     selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-                                                             target:self
-                                                           selector:@selector(skill3Pressed:)];
-        
-        cache = (Cache *)[player.equippedSkills objectAtIndex:3];
-        skill = [cache.bullets objectAtIndex:3];
-        CCMenuItem *skill4 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-                                                     selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-                                                             target:self
-                                                           selector:@selector(skill4Pressed:)];
-        
-        cache = (Cache *)[player.equippedSkills objectAtIndex:4];
-        skill = [cache.bullets objectAtIndex:4];
-        CCMenuItem *skill5 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-                                                     selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-                                                             target:self
-                                                           selector:@selector(skill5Pressed:)];
-        
-        CCMenu *Menu = [CCMenu menuWithItems:skill1, skill2, skill3, skill4, skill5, nil];
+//        Skill *skill;
+//        
+//        skill = [player.equippedSkills objectAtIndex:0];
+//        CCMenuItemSprite *skillItem1 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+//                                                              selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+//                                                                      target:skill
+//                                                                     selector:@selector(cast:)
+//                                                                 ];
+//        skill = [player.equippedSkills objectAtIndex:1];
+//        CCMenuItemSprite *skillItem2 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+//                                                               selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+//                                                                       target:skill
+//                                                                     selector:@selector(cast:)
+//                                        ];
+//        CCMenuItemSprite *skillItem3 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+//                                                               selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+//                                                                       target:skill
+//                                                                     selector:@selector(cast:)
+//                                        ];
+//        CCMenuItemSprite *skillItem4 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+//                                                               selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+//                                                                       target:skill
+//                                                                     selector:@selector(cast:)
+//                                        ];
+//        CCMenuItemSprite *skillItem5 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+//                                                               selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
+//                                                                       target:skill
+//                                                                     selector:@selector(cast:)
+//                                        ];
+//        
+
+        CCMenu *Menu = [CCMenu menuWithArray:skillBar];
         Menu.anchorPoint = ccp(0,0);
         Menu.position=ccp(160,30);
         Menu.scale = 2;
@@ -102,33 +105,18 @@
         _interface.selectedSkill = 1;
         
 
-        controllingPlayer.attacking = YES;
+        controllingPlayer.targeting = YES;
 //        NSLog(@"%i", _gameLayer.playerOne.attacking);
         _selected = TRUE;
     } else {
 //        [_label setString:@"Skill 1 Disactivated"];
-        controllingPlayer.attacking = NO;
+        controllingPlayer.targeting = NO;
         _selected = FALSE;
     }
     
 }
 
 
-- (void)skill2Pressed:(id)sender {
-    [_label setString:@"Skill 2 Activated"];
-}
-
-- (void)skill3Pressed:(id)sender {
-    [_label setString:@"Skill 3 Activated"];
-}
-
-- (void)skill4Pressed:(id)sender {
-    [_label setString:@"Skill 4 Activated"];
-}
-
-- (void)skill5Pressed:(id)sender {
-    [_label setString:@"Skill 5 Activated"];
-}
 
 -(void) addSkill:(Skill*)skill
 {
