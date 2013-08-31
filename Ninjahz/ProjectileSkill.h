@@ -23,7 +23,7 @@
 @property (nonatomic,assign) int dmg;
 @property (nonatomic,assign) int speed;
 @property (nonatomic,assign) CGPoint vector;
-@property (nonatomic,assign) ProjectileCache *cache;
+@property (strong) ProjectileCache *cache;
 @property (nonatomic,assign) Projectile projectile;
 
 

@@ -118,15 +118,12 @@
     
 }
 
-//-(void)initCache
-//{
-//    self.cache = [[ProjectileCache alloc]]
-//}
 
 -(void) setOwner:(Player*)player
 {
-    [self.cache setOwner:player];
     [super setOwner:player];
+    [self.cache setOwner:player];
+    
 }
 
 @end

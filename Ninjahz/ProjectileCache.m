@@ -84,6 +84,7 @@
                 
                 break;
         }
+        [[GameLayer sharedGameLayer] addChild:self];
     }
     return self;
 }
@@ -110,7 +111,7 @@
     [super setOwner:owner];
     for (ProjectileSkill *skill in self.bullets){
         [skill setOwner:owner];
-//        NSLog(@"%@", skill.owner.name);
+        NSLog(@"%@", skill.owner.name);
     }
 //
 }

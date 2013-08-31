@@ -49,9 +49,6 @@ static NSMutableArray *players;
         [self initPlayerTwo];
         NSLog(@"player two initialized");
         
-        
-        [self scheduleUpdate];
-        
     }
     
     return self;
@@ -146,11 +143,6 @@ static NSMutableArray *players;
 
 
 
-
--(void)update:(ccTime)delta
-{
-//    [self reorderActors];
-}
 
 
 

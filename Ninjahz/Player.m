@@ -102,8 +102,10 @@
        atTarget:(CGPoint)target
 {
     NSLog(@"use skill:%i", skillNum);
-    ProjectileCache *skill = [[_equippedSkills objectAtIndex:skillNum - 1] cache];
-    NSLog(@"owner:%@", skill.owner);
+//    NSLog(@"%@", (ProjectileSkill*)[[_equippedSkills objectAtIndex:0] cache] );
+    ProjectileSkill *proj = (ProjectileSkill*)[self.equippedSkills objectAtIndex:skillNum-1];
+    ProjectileCache *skill = proj.cache;
+    NSLog(@"owner:%@", skill.owner.name);
     [skill shootFrom:self.position atTarget:target];
     _targeting = NO;
     
@@ -133,24 +135,24 @@
     int i = 1;
     for(Skill *skill in self.equippedSkills){
         if([skill skillType] == kProjectile){
-            ProjectileSkill *temp = (ProjectileSkill*)skill;
+            ProjectileSkill *temp;
+            temp = (ProjectileSkill *)skill;
+
             ProjectileCache *cache = [[ProjectileCache alloc] initWithProjectile:temp.projectile];
             
             [temp setCache:cache];
             [skill setOwner:self];
-//            [temp setCacheOwner:(Player*)self];
-//            NSLog(@"%@", skill.owner.name);
-            
-            NSLog(@"!!!! %@", cache.owner.name);
-            //                [cache setOwner:self];
             
         } else {
             [skill setOwner:self];
-            NSLog(@"%@", skill.owner.name);
         }
         [skill setSkillNumber:i];
         i++;
+        
     }
+    
+
+    
 }
 
 
