@@ -30,10 +30,30 @@ typedef enum _ActionState {
     kActionStateWalkLeft,
     kActionStateWalkLeftDiag,
     kActionStateWalkBack,
+    kActionStateStunned,
     kActionStateHurt,
     kActionStateKnockedOut,
     kActionStateDead
 } ActionState;
+
+typedef enum _Projectile {
+    kFireBall = 0,
+    kIceBlast,
+    kPyroBlast,
+    kFrostStorm,
+    kTsunamiBlast,
+} Projectile;
+
+typedef enum _SkillType {
+    kProjectile = 0,
+    kInstant,
+    kDirect,
+    kAOE,
+} SkillType;
+
+
+
+
 
 // 4 - structures
 typedef struct _BoundingBox {
