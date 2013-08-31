@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "InstantCast.h"
+#import "TargetCast.h"
 
-@interface Teleport : InstantCast {
+@interface Teleport : TargetCast {
     
 }
 

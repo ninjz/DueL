@@ -152,6 +152,7 @@
 		A17B0A0717D1431700C16F05 /* NormalNazi.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B09FF17D142F800C16F05 /* NormalNazi.m */; };
 		A17B0A0817D1431700C16F05 /* NormalRambo.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B0A0117D142FD00C16F05 /* NormalRambo.m */; };
 		A17B0A0917D1431700C16F05 /* ProjectileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A17B0A0317D1430400C16F05 /* ProjectileCache.m */; };
+		A19D375F17D29F10006E2FA8 /* TargetCast.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D375E17D29F10006E2FA8 /* TargetCast.m */; };
 		A1D69F9617CC1151009B545A /* CharacterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69F9317CC1151009B545A /* CharacterClass.m */; };
 		A1D69F9717CC1151009B545A /* Nazi.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69F9517CC1151009B545A /* Nazi.m */; };
 		A1D69FA817CC1167009B545A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D69F9917CC1167009B545A /* AppDelegate.m */; };
@@ -474,6 +475,8 @@
 		A17B0A0217D1430100C16F05 /* ProjectileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectileCache.h; sourceTree = "<group>"; };
 		A17B0A0317D1430400C16F05 /* ProjectileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectileCache.m; sourceTree = "<group>"; };
 		A186F4401730BB4600906A5A /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Defines.h; path = "../cocos2d-library/Defines.h"; sourceTree = "<group>"; };
+		A19D375D17D29F10006E2FA8 /* TargetCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetCast.h; sourceTree = "<group>"; };
+		A19D375E17D29F10006E2FA8 /* TargetCast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetCast.m; sourceTree = "<group>"; };
 		A1D69F9217CC1151009B545A /* CharacterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterClass.h; sourceTree = "<group>"; };
 		A1D69F9317CC1151009B545A /* CharacterClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterClass.m; sourceTree = "<group>"; };
 		A1D69F9417CC1151009B545A /* Nazi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nazi.h; sourceTree = "<group>"; };
@@ -557,12 +560,12 @@
 		A12EE24617CC12A70093C564 /* Skills */ = {
 			isa = PBXGroup;
 			children = (
+				A19D376217D29F8E006E2FA8 /* Cache */,
 				A1D69FA617CC1167009B545A /* Skill.h */,
 				A1D69FA717CC1167009B545A /* Skill.m */,
+				A19D376017D29F1A006E2FA8 /* Target Cast */,
 				A16FFB3E17D146DC00B52890 /* Instant Cast */,
 				A16FFB3A17D1469700B52890 /* Projectile Skills */,
-				A16FFB3617D1455700B52890 /* Teleport.h */,
-				A16FFB3717D1455700B52890 /* Teleport.m */,
 			);
 			name = Skills;
 			sourceTree = "<group>";
@@ -570,10 +573,6 @@
 		A16FFB3A17D1469700B52890 /* Projectile Skills */ = {
 			isa = PBXGroup;
 			children = (
-				A17B09FC17D142F500C16F05 /* Cache.h */,
-				A17B09FD17D142F600C16F05 /* Cache.m */,
-				A17B0A0217D1430100C16F05 /* ProjectileCache.h */,
-				A17B0A0317D1430400C16F05 /* ProjectileCache.m */,
 				A16FFB3B17D146A700B52890 /* Base */,
 				A1D69F9C17CC1167009B545A /* Fireball.h */,
 				A1D69F9D17CC1167009B545A /* Fireball.m */,
@@ -1078,6 +1077,36 @@
 			path = GL;
 			sourceTree = "<group>";
 		};
+		A19D376017D29F1A006E2FA8 /* Target Cast */ = {
+			isa = PBXGroup;
+			children = (
+				A19D376117D29F2B006E2FA8 /* Base */,
+				A16FFB3617D1455700B52890 /* Teleport.h */,
+				A16FFB3717D1455700B52890 /* Teleport.m */,
+			);
+			name = "Target Cast";
+			sourceTree = "<group>";
+		};
+		A19D376117D29F2B006E2FA8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A19D375D17D29F10006E2FA8 /* TargetCast.h */,
+				A19D375E17D29F10006E2FA8 /* TargetCast.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		A19D376217D29F8E006E2FA8 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				A17B09FC17D142F500C16F05 /* Cache.h */,
+				A17B09FD17D142F600C16F05 /* Cache.m */,
+				A17B0A0217D1430100C16F05 /* ProjectileCache.h */,
+				A17B0A0317D1430400C16F05 /* ProjectileCache.m */,
+			);
+			name = Cache;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1195,6 +1224,7 @@
 				A1D69F9717CC1151009B545A /* Nazi.m in Sources */,
 				A17B0A0617D1431700C16F05 /* Cache.m in Sources */,
 				A17B0A0717D1431700C16F05 /* NormalNazi.m in Sources */,
+				A19D375F17D29F10006E2FA8 /* TargetCast.m in Sources */,
 				A16FFB3917D1455700B52890 /* Teleport.m in Sources */,
 				A17B0A0817D1431700C16F05 /* NormalRambo.m in Sources */,
 				A17B0A0917D1431700C16F05 /* ProjectileCache.m in Sources */,

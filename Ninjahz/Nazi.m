@@ -29,6 +29,7 @@
         FrostStorm *froststorm = [FrostStorm node];
         TsunamiBlast *tsunamiblast = [TsunamiBlast node];
         WallJump *walljump = [WallJump node];
+        Teleport *teleport = [Teleport node];
         
         
         // Skins go here!
@@ -42,20 +43,20 @@
         self.allSkins = skins;
         
         // All existing skills for this class
-        NSMutableArray *skills = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast, walljump]];
+        NSMutableArray *skills = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast, walljump, teleport]];
         self.allSkills = skills;
         
         
         /** DEFAULT**/
 
             // --default skills for class-- skills currently equipped (5 max currently.)
-            NSMutableArray *equippedSkills = [[NSMutableArray alloc] initWithArray:@[fireball, walljump, pyroblast, froststorm, tsunamiblast]];
+            NSMutableArray *equippedSkills = [[NSMutableArray alloc] initWithArray:@[fireball, walljump, teleport, froststorm, tsunamiblast]];
             self.equippedSkills = equippedSkills;
         
             
             
             // --default skills for class has to be in this array--
-            NSMutableArray *skillsKnown = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast, walljump]];
+            NSMutableArray *skillsKnown = [[NSMutableArray alloc] initWithArray:@[fireball, iceblast, pyroblast, froststorm, tsunamiblast, walljump, teleport]];
             self.skillsKnown = skillsKnown;
         
             // --default skin for class--

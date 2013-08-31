@@ -11,6 +11,7 @@
 #import "ProjectileCache.h"
 #import "ProjectileSkill.h"
 #import "Skill.h"
+#import "TargetCast.h"
 
 
 @implementation Player
@@ -29,9 +30,10 @@
         _velocity = character.velocity;
         _targeting = NO;
         _selectedSkill = 0;
-        desiredTarget = position;
+        _desiredTarget = position;
         self.position = position;
         _name = name;
+        
         
         
         // initialize skills
@@ -111,10 +113,24 @@
     
 }
 
+
+-(void)useTargetSkill:(int)skillNum
+       atTarget:(CGPoint)target
+{
+    
+    TargetCast *skill = (TargetCast*)[self.equippedSkills objectAtIndex:skillNum-1];
+    [skill activateAtTarget:target];
+    _targeting = NO;
+    
+}
+
+
+
+
 -(void) movePlayer:(CGPoint) target
 {
     if([self actionState] != kActionStateStunned){
-        desiredTarget = target;
+        _desiredTarget = target;
         CGPoint vector = ccpSub(target, self.position);
         vector = ccpNormalize(vector);
         desiredDirection = vector;
@@ -123,7 +139,7 @@
 }
 -(void) specialmovePlayer:(CGPoint) target
 {
-        desiredTarget = target;
+        _desiredTarget = target;
         CGPoint vector = ccpSub(target, self.position);
         vector = ccpNormalize(vector);
         desiredDirection = vector;
@@ -159,7 +175,7 @@
 -(void)update:(ccTime)dt
 {
 //    NSLog(@"desired pos: x:%f y:%f position: x:%f y:%f", desiredDirection.x, desiredDirection.y, self.position.x, self.position.y);
-    if (ccpDistance(desiredTarget, self.position) > 1){
+    if (ccpDistance(_desiredTarget, self.position) > 1){
         self.position = ccpAdd(self.position, ccpMult(desiredDirection, self.speed * dt));
         
         if(self.playerNumber == 1){

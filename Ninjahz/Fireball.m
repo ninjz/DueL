@@ -44,14 +44,7 @@
     return self;
 }
 
--(void) cast:(id)sender
-{
-     NSLog(@"casted");
-     NSLog(@"%@", self.owner.name);
-    [self.owner setSelectedSkill:self.skillNumber];
-    [self.owner setTargeting:YES];
-    
-}
+
 
 
 

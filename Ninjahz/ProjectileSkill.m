@@ -126,4 +126,12 @@
     
 }
 
+-(void) cast:(id)sender
+{
+    
+    [self.owner setSelectedSkill:self.skillNumber];
+    [self.owner setTargeting:YES];
+    
+}
+
 @end

@@ -15,6 +15,7 @@
 #import "Pyroblast.h"
 #import "FrostStorm.h"
 #import "TsunamiBlast.h"
+#import "Teleport.h"
 
 @interface Nazi : CharacterClass {
     

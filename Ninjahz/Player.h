@@ -14,7 +14,7 @@
 
 @interface Player : CCSprite {
     CGPoint desiredDirection;
-    CGPoint desiredTarget;
+//    CGPoint desiredTarget;
 }
 
 @property(nonatomic, strong) id backWalking;
@@ -25,6 +25,7 @@
 @property(nonatomic,assign) NSString *name;
 @property(nonatomic,assign) int speed;
 @property (readwrite, nonatomic) CGPoint velocity;
+@property (readwrite, nonatomic) CGPoint desiredTarget;
 @property(nonatomic,assign) BOOL mainPlayer;
 @property(strong) NSMutableArray *equippedSkills;
 @property(nonatomic,strong) Skin *equippedSkin;
@@ -46,6 +47,8 @@
 
 -(void)useSkill:(int)skillNum
        atTarget:(CGPoint)target;
+-(void)useTargetSkill:(int)skillNum
+             atTarget:(CGPoint)target;
 
 -(void)damage:(int)dmg;
 -(void) movePlayer:(CGPoint) target;

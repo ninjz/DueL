@@ -18,9 +18,15 @@
         
         self.currentCooldown = 0;
         self.cooldownTimeMax = 10;
-        self.skillIcon = @"Spell_frost_windwalkon.png";
+        self.skillIcon = @"Spell_frost_frostblast.png";
     }
     return self;
+}
+
+-(void) cast:(id)sender
+{
+    [self activate];
+    [self.owner setSelectedSkill:self.skillNumber];
 }
 
 -(void) activate
@@ -36,7 +42,7 @@
         }
         // store old player speed
         int speed = [self.owner speed];
-        [self.owner setSpeed:1000];
+        [self.owner setSpeed:5000];
         
         CGPoint target = ccp(SCREEN.width, self.owner.position.y);
         // move player with function (run skill animation)

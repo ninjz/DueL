@@ -47,7 +47,7 @@ typedef enum _Projectile {
 typedef enum _SkillType {
     kProjectile = 0,
     kInstant,
-    kDirect,
+    kTarget,
     kAOE,
 } SkillType;
 
