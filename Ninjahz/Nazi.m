@@ -52,7 +52,7 @@
             // --default skills for class-- skills currently equipped (5 max currently.)
             NSMutableArray *equippedSkills = [[NSMutableArray alloc] initWithArray:@[fireball, walljump, teleport, froststorm, tsunamiblast]];
             self.equippedSkills = equippedSkills;
-        
+            
             
             
             // --default skills for class has to be in this array--

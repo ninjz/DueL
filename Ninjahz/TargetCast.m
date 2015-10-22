@@ -24,11 +24,11 @@
 
 -(void) cast:(id)sender
 {
-    NSLog(@"teleport selected");
+    
     [self.owner setSelectedSkill:self.skillNumber];
-    [self.owner setTargeting:YES];
+    [self.owner setTargeting:![self.owner targeting]];
+    
 }
-
 
 
 

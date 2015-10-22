@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "CCAnimation+Helper.h"
 
+
 @interface Skin : CCNode {
     
 }
@@ -22,6 +23,9 @@
 
 @property(nonatomic, strong)id frontWalking;
 @property(nonatomic, strong)id frontIdle;
+
+@property(nonatomic, strong)id leftWalking;
+@property(nonatomic, strong)id rightWalking;
 
 
 @end

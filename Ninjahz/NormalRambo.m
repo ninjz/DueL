@@ -47,6 +47,11 @@
         self.frontIdle = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:front_idle]];
         
         
+        [self.backWalking setTag:BackWalk];
+        [self.backIdle setTag:BackIdle];
+        [self.frontWalking setTag:FrontWalk];
+        [self.frontIdle setTag:FrontIdle];
+        
     }
     
     return self;

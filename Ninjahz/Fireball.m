@@ -22,7 +22,7 @@
     if (self = [super initWithSpriteFrameName:@"fireball_up1.png"]){
         
         
-        self.dmg = 25;
+        self.dmg = 15;
         self.speed = 500;
         self.currentCooldown = 0;
         self.cooldownTimeMax = 2;

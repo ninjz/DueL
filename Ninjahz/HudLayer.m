@@ -44,37 +44,6 @@
 //           NSLog(@"%@", [[player.equippedSkills objectAtIndex:i] skillIcon]);
             [skillBar addObject:skillItem];
         }
-        
-//        Skill *skill;
-//        
-//        skill = [player.equippedSkills objectAtIndex:0];
-//        CCMenuItemSprite *skillItem1 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-//                                                              selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-//                                                                      target:skill
-//                                                                     selector:@selector(cast:)
-//                                                                 ];
-//        skill = [player.equippedSkills objectAtIndex:1];
-//        CCMenuItemSprite *skillItem2 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-//                                                               selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-//                                                                       target:skill
-//                                                                     selector:@selector(cast:)
-//                                        ];
-//        CCMenuItemSprite *skillItem3 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-//                                                               selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-//                                                                       target:skill
-//                                                                     selector:@selector(cast:)
-//                                        ];
-//        CCMenuItemSprite *skillItem4 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-//                                                               selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-//                                                                       target:skill
-//                                                                     selector:@selector(cast:)
-//                                        ];
-//        CCMenuItemSprite *skillItem5 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-//                                                               selectedSprite:[CCSprite spriteWithSpriteFrameName:skill.skillIcon]
-//                                                                       target:skill
-//                                                                     selector:@selector(cast:)
-//                                        ];
-//        
 
         CCMenu *Menu = [CCMenu menuWithArray:skillBar];
         Menu.anchorPoint = ccp(0,0);

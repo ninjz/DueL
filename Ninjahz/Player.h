@@ -12,8 +12,14 @@
 #import "CharacterClass.h"
 #import "Skill.h"
 
+
+
+
+
+
 @interface Player : CCSprite {
     CGPoint desiredDirection;
+    CCSequence *kill;
 //    CGPoint desiredTarget;
 }
 

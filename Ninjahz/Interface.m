@@ -39,64 +39,70 @@
     pos = [[CCDirector sharedDirector] convertToGL:location];
     
     // player 2 side
-    if (pos.y > SCREEN.height/2){
-        if (_gameLayer.playerTwo.targeting){
-            // check skill type
-            SkillType type = [[_gameLayer.playerTwo.equippedSkills objectAtIndex:[_gameLayer.playerTwo selectedSkill] - 1] skillType];
-            
-            if (pos.y < _gameLayer.playerTwo.position.y && type == kProjectile){
+    for (UITouch *touch in touches){
+        if (pos.y > SCREEN.height/2){
+            if (_gameLayer.playerTwo.targeting){
+                // check skill type
+                SkillType type = [[_gameLayer.playerTwo.equippedSkills objectAtIndex:[_gameLayer.playerTwo selectedSkill] - 1] skillType];
                 
-                [_gameLayer.playerTwo useSkill:_gameLayer.playerTwo.selectedSkill atTarget:pos];
-                // tell that player's hude that it has been shot, start cooldown
-                [_hud_2 setSelected:FALSE];
+                if (pos.y < _gameLayer.playerTwo.position.y && type == kProjectile){
+                    
+                    [_gameLayer.playerTwo useSkill:_gameLayer.playerTwo.selectedSkill atTarget:pos];
+                    // tell that player's hude that it has been shot, start cooldown
+                    [_hud_2 setSelected:FALSE];
+                    
+                } else if (type == kTarget) {// Target Cast
+                    
+                    [_gameLayer.playerTwo useTargetSkill:_gameLayer.playerTwo.selectedSkill atTarget:pos];
+                     [_hud_2 setSelected:FALSE];
+                }
                 
-            } else if (type == kTarget) {// Target Cast
+                else { // let player move again
+                    [_gameLayer.playerTwo movePlayer:pos];
+                     [_hud_2 setSelected:FALSE];
+                    
+                }
                 
-                [_gameLayer.playerTwo useTargetSkill:_gameLayer.playerTwo.selectedSkill atTarget:pos];
-            }
-            
-            else { // let player move again
+            } else {
+                
+                // move player 2
                 [_gameLayer.playerTwo movePlayer:pos];
-
             }
             
-        } else {
             
-            // move player 2
-             [_gameLayer.playerTwo movePlayer:pos];
+        } else{  // player 1 side
+            if (_gameLayer.playerOne.targeting){
+                // check skill type
+                SkillType type = [[_gameLayer.playerOne.equippedSkills objectAtIndex:[_gameLayer.playerOne selectedSkill] - 1] skillType];
+                
+                if (pos.y > _gameLayer.playerOne.position.y && type == kProjectile){
+                    
+                    [_gameLayer.playerOne useSkill:_gameLayer.playerOne.selectedSkill atTarget:pos];
+                    
+                    // tell that player's hud that it has been shot, start cooldown
+                    [_hud_1 setSelected:FALSE];
+                    
+                    
+                } else if (type == kTarget){
+                    [_gameLayer.playerOne useTargetSkill:_gameLayer.playerOne.selectedSkill atTarget:pos];
+                    [_hud_1 setSelected:FALSE];
+                }
+                
+                
+                else{
+                    [_gameLayer.playerOne movePlayer:pos];
+                    [_hud_1 setSelected:FALSE];
+                }
+            } else {
+                
+                // move player 1
+                [_gameLayer.playerOne movePlayer:pos];
+            }
+            
+            
         }
-        
-        
-    } else{  // player 1 side
-        if (_gameLayer.playerOne.targeting){
-            // check skill type
-            SkillType type = [[_gameLayer.playerOne.equippedSkills objectAtIndex:[_gameLayer.playerOne selectedSkill] - 1] skillType];
-            
-            if (pos.y > _gameLayer.playerOne.position.y && type == kProjectile){
-               
-                [_gameLayer.playerOne useSkill:_gameLayer.playerOne.selectedSkill atTarget:pos];
-            
-                // tell that player's hud that it has been shot, start cooldown
-                [_hud_1 setSelected:FALSE];
-                
-                
-            } else if (type == kTarget){
-                [_gameLayer.playerOne useTargetSkill:_gameLayer.playerOne.selectedSkill atTarget:pos];
-            }
-            
-            
-            else{
-                 [_gameLayer.playerOne movePlayer:pos];
-                
-            }
-        } else {
-            
-            // move player 1
-            [_gameLayer.playerOne movePlayer:pos];
-        }
-        
-        
     }
+    
     
     
 }

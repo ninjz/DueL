@@ -17,41 +17,41 @@
 
 
 
--(void) setPosition:(CGPoint)position
-{
-    if(_mainPlayer){
-        if(position.y > SCREEN.height/2){
-            
-        } else if(position.y < 90){
-            
-        } else if(position.x < 20 && position.y < 10){
-            
-        } else if(position.x > SCREEN.width - 20  && position.y < 10 ){
-            
-        }
-        else {
-            [super setPosition:position];
-            
-        }
-    } else {
-        if(position.y < SCREEN.height/2 + 30){
-            
-        } else if(position.y > SCREEN.height - 90){
-            
-        } else if(position.x < 20 && position.y > SCREEN.height - 10){
-            
-        } else if(position.x > SCREEN.width - 20  && position.y > SCREEN.height - 10 ){
-            
-        }
-        else {
-            [super setPosition:position];
-            
-        }
-        
-        
-    }
-    
-}
+//-(void) setPosition:(CGPoint)position
+//{
+//    if(_mainPlayer){
+//        if(position.y > SCREEN.height/2){
+//            
+//        } else if(position.y < 90){
+//            
+//        } else if(position.x < 20 && position.y < 10){
+//            
+//        } else if(position.x > SCREEN.width - 20  && position.y < 10 ){
+//            
+//        }
+//        else {
+//            [super setPosition:position];
+//            
+//        }
+//    } else {
+//        if(position.y < SCREEN.height/2 + 30){
+//            
+//        } else if(position.y > SCREEN.height - 90){
+//            
+//        } else if(position.x < 20 && position.y > SCREEN.height - 10){
+//            
+//        } else if(position.x > SCREEN.width - 20  && position.y > SCREEN.height - 10 ){
+//            
+//        }
+//        else {
+//            [super setPosition:position];
+//            
+//        }
+//        
+//        
+//    }
+//    
+//}
 
 
 -(void) addSkill:(Skill*)skill

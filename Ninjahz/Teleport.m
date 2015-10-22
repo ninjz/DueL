@@ -15,7 +15,7 @@
 -(id)init {
     if (self = [super initWithSpriteFrameName:@"fireball_up1.png"]){
         
-        
+        self.visible = NO;
         self.currentCooldown = 0;
         self.cooldownTimeMax = 2;
         self.isReady = YES;
@@ -30,6 +30,7 @@
 //        self.firing = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:moving]];
         
         //          cache = [[ProjectileCache alloc] initWithProjectile:kFireBall];
+//        [[GameLayer sharedGameLayer] addChild:self];
         
     }
     return self;

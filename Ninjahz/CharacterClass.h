@@ -11,6 +11,8 @@
 #import "Skill.h"
 #import "Skin.h"
 
+
+
 @interface CharacterClass : CCNode {
 
 }

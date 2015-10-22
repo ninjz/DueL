@@ -18,6 +18,7 @@
     if(self = [super init]){
         self.skillType = kProjectile;
         
+        
     }
     
     return self;
@@ -130,7 +131,7 @@
 {
     
     [self.owner setSelectedSkill:self.skillNumber];
-    [self.owner setTargeting:YES];
+    [self.owner setTargeting:![self.owner targeting]];
     
 }
 

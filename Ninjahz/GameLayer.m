@@ -92,11 +92,12 @@ static NSMutableArray *players;
 }
 
 -(void)initPlayerTwo {
-    Rambo *rambo = [Rambo node];
-    _playerTwo = [[Player alloc] initWithCharacter:rambo asPlayer:2 withName:@"Godzilla" atPosition:ccp(SCREEN.width/2, SCREEN.height - 200)];
+//    Rambo *rambo = [Rambo node];
+    Nazi *nazi = [Nazi node];
+    _playerTwo = [[Player alloc] initWithCharacter:nazi asPlayer:2 withName:@"Godzilla" atPosition:ccp(SCREEN.width/2, SCREEN.height - 200)];
     [_playerTwo initSkills];
     
-    [self addChild:_playerTwo z:5];
+    [self addChild:_playerTwo z:5]; 
     
 //    _playerTwo.rotation = 180;   
     _playerTwo.scale = 1.5;
